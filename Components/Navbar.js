@@ -1,22 +1,79 @@
-import { Switch } from "@chakra-ui/react"
-import styles from '../styles/Layout.module.css'
-import { useMediaQuery } from "@chakra-ui/react"
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
-
+import { Switch } from "@chakra-ui/react";
+import styles from "../styles/Layout.module.css";
+import { useMediaQuery } from "@chakra-ui/react";
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Navlinks from "./Navlinks";
+import {userinfo} from "../Constants/userinfo"
 
 const Navbar = ({ toggleTheme, currentTheme }) => {
-    const [drawerVisible] = useMediaQuery("(max-width: 950px)")
-    const [sticky, setSticky] = useState(false)
+  const [drawerVisible] = useMediaQuery("(max-width: 950px)");
+  const [sticky, setSticky] = useState(false);
 
-    const handleScroll = () => {
-        const offset = window.scrollY;
-        if (offset > 0) {
-            setSticky(true);
-            return;
-        }
-        setSticky(false);
+  const handleScroll = () => {
+    const offset = window.scrollY;
+    if (offset > 0) {
+      setSticky(true);
+    } else {
+      setSticky(false);
     }
-}
+  };
 
-export default Navbar
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+  });
+
+  return (
+    <div
+      className={styles.navbar}
+      style={{
+        backgroundColor: currentTheme.secondary,
+        boxShadow: currentTheme.boxShadow,
+        position: sticky ? "fixed" : "static",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-evenly",
+          alignItems: "baseline",
+          marginBottom: !drawerVisible ? "0" : "10px",
+        }}
+      >
+        <Link href="/">
+          <a>
+            <h2 className={styles.logo}>{userinfo.logoText}</h2>
+          </a>
+        </Link>
+        {!drawerVisible ? (
+          <div style={{ display: "flex" }}>
+            <Navlinks />
+          </div>
+        ) : null}
+        <Switch
+          id="dark-mode"
+          colorScheme="purple"
+          size={!drawerVisible ? "lg" : "md"}
+          isChecked={currentTheme.name === "dark" ? true : false}
+          onChange={() => toggleTheme()}
+        />
+      </div>
+      {drawerVisible ? (
+        <>
+          <hr />
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-evenly",
+              marginTop: "10px",
+            }}
+          >
+            <Navlinks />
+          </div>
+        </>
+      ) : null}
+    </div>
+  );
+};
+
+export default Navbar;

@@ -1,14 +1,13 @@
-import React from 'react'
+import Head from 'next/head'
+import HomePage from '../Components/HomePage'
+import HeadTag from '../Components/HeadTag'
 
-import Navbar from '../Components/Navbar'
+export default function Home({ currentTheme }) {
 
-const Home = () => {
   return (
     <div>
-      <Navbar />
-      <h1>Hello Next.js</h1>
+      <HeadTag page='Home'/>
+      <HomePage currentTheme={currentTheme} />
     </div>
   )
 }
-
-export default Home
