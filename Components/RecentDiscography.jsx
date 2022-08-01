@@ -3,7 +3,7 @@ import styles from "../styles/Home.module.css";
 import { userinfo, headings, ctaTexts } from "../Constants/userinfo";
 import Link from "next/link";
 
-const Discography = ({ currentTheme }) => {
+const RecentDiscography = ({ currentTheme }) => {
   return (
     <div className={styles.discographyWrapper}>
       <div className={styles.workheading} data-aos="fade-up">
@@ -12,8 +12,8 @@ const Discography = ({ currentTheme }) => {
 
       <div className={styles.timeline}>
         <ul>
-          {userinfo.discography.discographyList
-            ? userinfo.discography.discographyList.map((value, key) => {
+          {userinfo.recentDiscography.recentDiscographyList
+            ? userinfo.recentDiscography.recentDiscographyList.map((value, key) => {
                 return (
                   <li data-aos="fade-up" key={key}>
                     <div className={styles.content}>
@@ -47,4 +47,4 @@ const Discography = ({ currentTheme }) => {
   );
 };
 
-export default Discography;
+export default RecentDiscography;

@@ -36,6 +36,32 @@ export const userinfo = {
         },
   
     ],
+    recentDiscography: {
+        visible: true, //set this to false if you want to omit this section
+        recentDiscographyList: [
+            {
+                time: 'May - Oct 2020', 
+                title: 'MWA', 
+                label: 'BMI', 
+                place: 'Cambridge, MA', 
+                supports: 'LP TP CD'
+            },
+            {
+                time: 'May - Oct 2020',
+                title: 'MWA',
+                label: 'BMI', 
+                place: 'Cambridge, MA', 
+                supports: 'LP TP CD'
+            },
+            {
+                time: 'May - Oct 2020',
+                title: 'MWA',
+                label: 'BMI', 
+                place: 'Cambridge, MA', 
+                supports: 'LP TP CD'
+            },
+        ],
+    },
     discography: {
         visible: true, //set this to false if you want to omit this section
         discographyList: [
