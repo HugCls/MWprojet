@@ -2,6 +2,7 @@ import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import HomeProject from "./HomeProject";
 import Skills from "./Distinctions";
+import RecentDiscography from "./RecentDiscography";
 import Discography from "./Discography";
 import { projects } from "../Constants/projects";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -71,6 +72,7 @@ const HomePage = ({ currentTheme }) => {
       >
         <Skills currentTheme={currentTheme} />
       </div>
+      <RecentDiscography currentTheme={currentTheme} />
         <Discography currentTheme={currentTheme} />
       <div
         id="about"
