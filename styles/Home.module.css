@@ -95,7 +95,7 @@
   text-align: center;
 }
 
-.homeWorkSection{
+.homeGigsSection{
   padding: 2rem;
 }
 
@@ -398,7 +398,7 @@
   .workheading{
     font-size: 40px;
   }
-  .homeWorkSection{
+  .homeGigsSection{
     padding: 1rem;
   }
   .homeAboutSection{

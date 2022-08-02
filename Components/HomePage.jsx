@@ -1,10 +1,10 @@
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
-import HomeProject from "./HomeProject";
+import HomeGigs from "./HomeGigs";
 import Skills from "./Distinctions";
 import RecentDiscography from "./RecentDiscography";
 import Discography from "./Discography";
-import { projects } from "../Constants/projects";
+import { gigs } from "../Constants/gigs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import { userinfo, ctaTexts, headings } from "../Constants/userinfo";
@@ -23,7 +23,7 @@ const HomePage = ({ currentTheme }) => {
         >
           {userinfo.greeting.subtitle}
         </h2>
-        <Link href="#work">
+        <Link href="#gigs">
           <a
             className={styles.cta1}
             style={{
@@ -36,23 +36,23 @@ const HomePage = ({ currentTheme }) => {
           </a>
         </Link>
       </div>
-      <div className={styles.homeWorkSection} id="work">
+      <div className={styles.homeGigsSection} id="gigs">
         <h1 className={styles.workheading} data-aos="fade-up">
-          {headings.workHomePage}
+          {headings.gigsHomePage}
         </h1>
-        {projects.slice(0, 3).map((project, key) => {
+        {gigs.slice(0, 3).map((gigs, key) => {
           return (
             <div key={key} data-aos="fade-up">
-              <HomeProject
+              <HomeGigs
                 currentTheme={currentTheme}
-                project={project}
+                gig={gigs}
                 id={key}
               />
             </div>
           );
         })}
         <div style={{ textAlign: "center", paddingBottom: "2rem" }}>
-          <Link href="/work">
+          <Link href="/gigs">
             <a
               className={styles.cta3}
               style={{
@@ -60,7 +60,7 @@ const HomePage = ({ currentTheme }) => {
                 color: currentTheme.contrastText,
               }}
             >
-              {ctaTexts.workCTA} <span>&gt;</span>
+              {ctaTexts.gigsCTA} <span>&gt;</span>
             </a>
           </Link>
         </div>

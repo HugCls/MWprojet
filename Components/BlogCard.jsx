@@ -1,7 +1,7 @@
 import { Box, TagLabel, Tag, HStack } from "@chakra-ui/react"
 import Image from 'next/image'
 import Link from 'next/link'
-import styles from '../styles/Work.module.css'
+import styles from '../styles/Gigs.module.css'
 
 const BlogCard = ({ blog, currentTheme }) => {
     

@@ -1,4 +1,4 @@
-import styles from '../styles/Work.module.css'
+import styles from '../styles/Gigs.module.css'
 import React, { useState, useEffect } from 'react'
 import { useMediaQuery } from "@chakra-ui/react"
 import { useSwipeable } from "react-swipeable";

@@ -150,9 +150,10 @@ export const userinfo = {
 
 export const headings = {
     //you can customise all the headings here.
-    workHomePage: 'Work',
-    workMainPage: 'Projects',
+    gigsHomePage: 'Next Gigs',
+    gigsMainPage: 'Projects',
     distinctions: 'Distinctions',
+    gigs: 'Next Gigs',
     about: 'About Me',
     discography: 'Discography',
     experience: 'Experiences',
@@ -162,8 +163,8 @@ export const headings = {
 
 export const ctaTexts = {
     //you can customise all the cta texts here.
-    landingCTA: 'My work',
-    workCTA: 'View All',
+    landingCTA: 'Media',
+    gigsCTA: 'View All',
     capabCTA: 'Get in Touch',
     resumeCTA: 'Resume',
     submitBTN: 'Submit'
