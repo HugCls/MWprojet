@@ -3,7 +3,7 @@ import {  faMediumM, faFacebook, faTwitter, faInstagram, faYoutube, faBehance } 
 import { FaYoutube, FaSpotify } from 'react-icons/fa';
 
 export const userinfo = {
-    logoText: 'Micheal "Mudcat" Ward', //This text is visible on your navbar and footer like your logo.
+    logoText: 'Michael "Mudcat" Ward', //This text is visible on your navbar and footer like your logo.
     contact: {
         email: 'michaelscott@email.com', //It is always a good idea to mention your email on your website. Good platform to communicate.
         phone: '1234567890', //Phone number is optional, if you dont want it, consider leaving it blank .

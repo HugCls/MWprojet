@@ -23,7 +23,7 @@ const HomePage = ({ currentTheme }) => {
         >
           {userinfo.greeting.subtitle}
         </h2>
-        <Link href="#gigs">
+        <Link href="/media">
           <a
             className={styles.cta1}
             style={{

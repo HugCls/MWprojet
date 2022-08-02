@@ -11,7 +11,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { useSwipeable } from "react-swipeable";
 
-const GigsProject = ({ currentTheme, project, id }) => {
+const MediaProject = ({ currentTheme, project, id }) => {
   const toast = useToast();
   const [index, setIndex] = useState(0);
 
@@ -171,4 +171,4 @@ const GigsProject = ({ currentTheme, project, id }) => {
   );
 };
 
-export default GigsProject;
+export default MediaProject;
