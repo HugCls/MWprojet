@@ -7,7 +7,7 @@ import {
   AccordionPanel,
   AccordionIcon,
 } from "@chakra-ui/react";
-import { userinfo, headings, ctaTexts } from "../Constants/userinfo";
+import { userinfo } from "../Constants/userinfo";
 import Link from "next/link";
 
 const Discography = ({ currentTheme }) => {

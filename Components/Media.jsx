@@ -1,5 +1,5 @@
-import styles from '../styles/Work.module.css'
-import WorkProject from './WorkProject'
+import styles from '../styles/Gigs.module.css'
+import MediaProject from './MediaProject'
 import BlogCard from './BlogCard';
 import { projects } from '../Constants/projects'
 import { custom_blogs, medium_blogs, dev_to } from '../Constants/blogs'
@@ -8,7 +8,7 @@ import { headings, userinfo } from '../Constants/userinfo'
 import Carousel, { CarouselItem } from "./Carousel";
 import Experiences from './Experiences';
 
-const Work = ({ currentTheme }) => {
+const Media = ({ currentTheme }) => {
 
     const [blogList, setBlogList] = useState([])
 
@@ -41,7 +41,7 @@ const Work = ({ currentTheme }) => {
                     projects.map((project, key) => {
                         return (
                             <div key={key} data-aos='fade-up'>
-                                <WorkProject currentTheme={currentTheme} project={project} id={key} />
+                                <MediaProject currentTheme={currentTheme} project={project} id={key} />
                             </div>
                         )
                     })
@@ -71,4 +71,5 @@ const Work = ({ currentTheme }) => {
     )
 }
 
-export default Work
+export default Media
+

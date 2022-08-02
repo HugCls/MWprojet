@@ -18,7 +18,7 @@ export const projects = [
         name: 'Dunder Mifflin', //project name
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum', //project description
         githubLink: '', //github repo link
-        projectLink: '', //deployed project link
+        projectLink: 'https://www.facebook.com/BlueMondayMission/', //deployed project link
         tech: ['Tech1', 'Tech2', 'Tech3'], //techstack of the project, it is advisavble to mention only upto 3 technologies here to maintain the ui
         photo: [PROJECT1_1, PROJECT1_2, PROJECT1_3], //list of names of images from above imports.
     },
