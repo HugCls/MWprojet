@@ -2,7 +2,6 @@ import styles from "../styles/Home.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTelegramPlane } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
-import { gigs } from "../Constants/gigs";
 
 const HomeGigs = ({ currentTheme, id, gig }) => {
   return (
