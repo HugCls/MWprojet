@@ -1,7 +1,7 @@
 import styles from '../styles/Gigs.module.css'
 import MediaProject from './MediaProject'
 import BlogCard from './BlogCard';
-import { projects } from '../Constants/projects'
+import { project } from '../Constants/project'
 import { custom_blogs, medium_blogs, dev_to } from '../Constants/blogs'
 import { useState, useEffect } from 'react';
 import { headings, userinfo } from '../Constants/userinfo'
@@ -38,7 +38,7 @@ const Media = ({ currentTheme }) => {
             <div className={styles.workHeading}>{headings.workMainPage}</div>
             <div className={styles.workmain} style={{ color: currentTheme.subtext }}>
                 {
-                    projects.map((project, key) => {
+                    project.map((project, key) => {
                         return (
                             <div key={key} data-aos='fade-up'>
                                 <MediaProject currentTheme={currentTheme} project={project} id={key} />
