@@ -5,7 +5,7 @@
     padding: 2rem;
 }
 
-.blogHeading{
+.articleHeading{
     font-family: 'Playfair Display', serif;
     text-align: center;
     font-size:50px;
@@ -209,7 +209,7 @@
         padding: 2rem 1rem;
     }
 
-    .blogHeading{
+    .articleHeading{
         font-size:35px;
         padding: 1rem;
     }

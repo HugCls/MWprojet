@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/Gigs.module.css";
 
-const BlogCard = ({ blog, currentTheme }) => {
+const ArticleCard = ({ article, currentTheme }) => {
   return (
     <div style={{ whiteSpace: "initial" }}>
       <Box
@@ -14,15 +14,15 @@ const BlogCard = ({ blog, currentTheme }) => {
         bg={currentTheme.secondary}
       >
         <Image
-          src={blog.thumbnail || blog.cover_image}
+          src={article.thumbnail || article.cover_image}
           alt="thumbnail image"
-          height="300"
+          height="500"
           width="500"
         />
         <Box p="6">
           <HStack spacing={2}>
-            {blog.categories
-              ? blog.categories.slice(0, 3).map((category, key) => {
+            {article.categories
+              ? article.categories.slice(0, 3).map((category, key) => {
                   return (
                     <div key={key}>
                       <Tag
@@ -36,8 +36,8 @@ const BlogCard = ({ blog, currentTheme }) => {
                     </div>
                   );
                 })
-              : blog.tag_list
-              ? blog.tag_list.slice(0, 3).map((category, key) => {
+              : article.tag_list
+              ? article.tag_list.slice(0, 3).map((category, key) => {
                   return (
                     <div key={key}>
                       <Tag
@@ -54,15 +54,15 @@ const BlogCard = ({ blog, currentTheme }) => {
               : null}
           </HStack>
           <Box mt="1" as="h4" lineHeight="tight">
-            {blog.title}
+            {article.title}
           </Box>
           <Box as="span" color={currentTheme.subtext} fontSize="sm">
-            {blog.description.replace(/(<([^>]+)>)/gi, "").slice(0, 85) +
+            {article.description.replace(/(<([^>]+)>)/gi, "").slice(0, 85) +
               " . . ."}
           </Box>
           <div style={{ marginTop: "1rem" }}>
             <Box>
-              <Link href={blog.link || blog.url}>
+              <Link href={article.link || article.url}>
                 <a className={styles.cta2} style={{ color: "#3182ce" }}>
                   View More
                 </a>
@@ -75,4 +75,4 @@ const BlogCard = ({ blog, currentTheme }) => {
   );
 };
 
-export default BlogCard;
+export default ArticleCard;
