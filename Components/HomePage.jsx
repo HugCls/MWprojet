@@ -1,5 +1,6 @@
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
+import About from "./About";
 import HomeGigs from "./HomeGigs";
 import Skills from "./Distinctions";
 import RecentDiscography from "./RecentDiscography";
@@ -120,7 +121,10 @@ const HomePage = ({ currentTheme }) => {
           </Link>
         </div>
       </div>
+      <About 
+      currentTheme = {currentTheme}/>
     </div>
+    
   );
 };
 

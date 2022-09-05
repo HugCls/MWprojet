@@ -54,8 +54,8 @@ const Carousel = ({ children, currentTheme }) => {
     });
 
     return (
-        <div {...handlers} className={styles.carousel} id="blogs" style={{ backgroundColor: currentTheme.secondary }} data-aos="fade-up">
-            <div className={styles.blogHeading}>{headings.blogs}</div>
+        <div {...handlers} className={styles.carousel} id="articles" style={{ backgroundColor: currentTheme.secondary }} data-aos="fade-up">
+            <div className={styles.articleHeading}>{headings.articles}</div>
             <div className={styles.inner} style={{ transform: `translateX(-${activeIndex * 100}%)` }} onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
                 {React.Children.map(children, (child, index) => {
                     return React.cloneElement(child, { width: isSmall ? isVerySmall ? '100%' : '50%' : '33.33%' });

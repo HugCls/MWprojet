@@ -142,7 +142,7 @@ export const userinfo = {
             },
         ],
     },
-    blogs: {
+    articles: {
         //set this to false if you want to omit this section
         visible: true
     },
@@ -157,7 +157,7 @@ export const headings = {
     about: 'About Me',
     discography: 'Discography',
     experience: 'Experiences',
-    blogs: 'I write!',
+    articles: 'They wrote about me',
     contact: 'Contact Me',
 }
 
