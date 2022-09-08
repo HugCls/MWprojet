@@ -2,7 +2,7 @@ export const lightTheme = {
     name: 'light',
     body: '#fefefe',
     text: '#363537',
-    subtext: '#707070',
+    subtext: '#4f4f4f',
     secondary: '#d7f7f5',
     tertiary: '#75cac3',
     accent: '#263859',
