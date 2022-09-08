@@ -54,7 +54,7 @@ const Navbar = ({ toggleTheme, currentTheme }) => {
           id="dark-mode"
           colorScheme="purple"
           size={!drawerVisible ? "lg" : "md"}
-          isChecked={currentTheme.name === "dark" ? true : false}
+          isChecked={currentTheme.name === "dark"}
           onChange={() => toggleTheme()}
         />
       </div>

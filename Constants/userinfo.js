@@ -49,7 +49,7 @@ export const userinfo = {
             {
                 time: 'May - Oct 2020',
                 title: 'MWA',
-                label: 'BMI', 
+                label: 'BMI',
                 place: 'Cambridge, MA', 
                 supports: 'LP TP CD'
             },
