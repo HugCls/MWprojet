@@ -23,13 +23,10 @@ function Discography({ currentTheme }) {
   //     'User-Agent': 'axios/0.19.2 X-SiteSpeedApp-1 EzoicStaticCache'
   //   }
   // };
-  
-  
-  const  {data, error, loading}  = useFetchData();
 
- if (loading) console.log(data);
+  const { data, error, loading } = useFetchData();
 
-  
+ if (loading) console.log(data?.releases);
 
   <Accordion allowToggle>
     <AccordionItem>
@@ -38,13 +35,13 @@ function Discography({ currentTheme }) {
       </AccordionButton>
       <AccordionPanel>
         <div className={styles.timeline}>
-          <ul> 
+          <ul>
             {data.releases.map((value, key) => {
               return (
-                <li data-aos="fade-up" key={key}>
+                <li data-aos="fade-up" key={key} value={value}>
                   <div className={styles.content}>
                     <h3 style={{ color: currentTheme.accent }}>
-                      {value.title}
+                      {value.title}, {value.role}
                     </h3>
                     <p style={{ color: currentTheme.subtext }}>
                       {value.label}, {value.place}
@@ -64,7 +61,7 @@ function Discography({ currentTheme }) {
                   </div>
                 </li>
               );
-            })} 
+            })}
             <div style={{ clear: "both" }} />
           </ul>
         </div>
