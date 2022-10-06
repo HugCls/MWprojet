@@ -1,13 +1,23 @@
 import { Box, TagLabel, Tag, HStack } from "@chakra-ui/react";
 import Image from "next/image";
+import React from "react";
+import { useDisclosure } from "@chakra-ui/react";
+import Parser from "html-react-parser";
+import { Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter } from "@chakra-ui/react";
 import Link from "next/link";
 import styles from "../styles/Gigs.module.css";
 
 const ArticleCard = ({ article, currentTheme }) => {
+  const btnRef = React.useRef(null);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [scrollBehavior, setScrollBehavior] = React.useState("inside");
+
+
   return (
     <div style={{ whiteSpace: "initial" }}>
       <Box
-        maxW="sm"
+      height={"680px"}
+        maxW="md"
         borderWidth="2px"
         borderRadius="lg"
         overflow="hidden"
@@ -57,22 +67,36 @@ const ArticleCard = ({ article, currentTheme }) => {
             {article.title}
           </Box>
           <Box as="span" color={currentTheme.subtext} fontSize="sm">
-            {article.description.replace(/(<([^>]+)>)/gi, "").slice(0, 85) +
-              " . . ."}
+            {article.description.replace(/(<([^>]+)>)/gi, "").slice(0, 80) +
+              " . . ."}&nbsp;&nbsp;
+               
           </Box>
-          <div style={{ marginTop: "1rem" }}>
-            <Box>
-              <Link href={article.link || article.url}>
-                <a className={styles.cta2} style={{ color: "#3182ce" }}>
-                  View More
-                </a>
-              </Link>
-            </Box>
-          </div>
+          <Button variant="link" ref={btnRef} onClick={onOpen}>
+          <a style={{ fontSize: "16px", color: "#3182ce" }}>View More</a>
+        </Button>
+        <Modal
+          onClose={onClose}
+          finalFocusRef={btnRef}
+          isOpen={isOpen}
+          scrollBehavior={scrollBehavior}
+        >
+          <ModalOverlay />
+          <ModalContent style={{ backgroundColor: currentTheme.secondary }}>
+            <ModalHeader>{article.title}</ModalHeader>
+            <ModalCloseButton />
+            <ModalBody>{Parser(article.description)}</ModalBody>
+            <ModalFooter>
+              <Button onClick={onClose}>Close</Button>
+            </ModalFooter>
+          </ModalContent>
+        </Modal>           
+         
         </Box>
       </Box>
     </div>
   );
 };
+
+
 
 export default ArticleCard;
