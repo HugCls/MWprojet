@@ -1,11 +1,27 @@
 import styles from "../styles/Home.module.css";
+import React from "react";
 import Link from "next/link";
+import Parser from "html-react-parser";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useDisclosure } from "@chakra-ui/react";
+import {
+  Button,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+} from "@chakra-ui/react";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 
 import { userinfo, ctaTexts, headings } from "../Constants/userinfo";
 
 const About = ({ currentTheme }) => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [scrollBehavior, setScrollBehavior] = React.useState("inside");
+  const btnRef = React.useRef(null);
   return (
     <div
       id="about"
@@ -33,24 +49,30 @@ const About = ({ currentTheme }) => {
           color: currentTheme.subtext,
         }}
       >
-        <Link href={userinfo.about.resume} target="_blank">
-          <a
-            className={styles.cta4}
-            style={{
-              background: "transparent",
-              border: `2px solid ${currentTheme.subtext}`,
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            {ctaTexts.resumeCTA}&nbsp;&nbsp;&nbsp;&nbsp;
-            <FontAwesomeIcon
-              width="15px"
-              height="15px"
-              icon={faExternalLinkAlt}
-            />
-          </a>
-        </Link>
+        <Button ref={btnRef} onClick={onOpen}>
+          {ctaTexts.resumeCTA}&nbsp;&nbsp;&nbsp;&nbsp;
+          <FontAwesomeIcon
+            width="15px"
+            height="15px"
+            icon={faExternalLinkAlt}
+          />
+        </Button>
+        <Modal
+          onClose={onClose}
+          finalFocusRef={btnRef}
+          isOpen={isOpen}
+          scrollBehavior={scrollBehavior}
+        >
+          <ModalOverlay />
+          <ModalContent style={{ backgroundColor: currentTheme.secondary }}>
+            <ModalHeader>Michael "Mudcat" Ward</ModalHeader>
+            <ModalCloseButton />
+            <ModalBody>{Parser(userinfo.aboutSeeMore.content)}</ModalBody>
+            <ModalFooter>
+              <Button onClick={onClose}>Close</Button>
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
       </div>
     </div>
   );
