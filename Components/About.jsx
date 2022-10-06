@@ -1,6 +1,7 @@
 import styles from "../styles/Home.module.css";
 import React from "react";
 import Link from "next/link";
+import Parser from "html-react-parser";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useDisclosure } from "@chakra-ui/react";
 import {
@@ -48,29 +49,25 @@ const About = ({ currentTheme }) => {
           color: currentTheme.subtext,
         }}
       >
-        <Button ref={btnRef}
-            onClick={onOpen}>
+        <Button ref={btnRef} onClick={onOpen}>
           {ctaTexts.resumeCTA}&nbsp;&nbsp;&nbsp;&nbsp;
           <FontAwesomeIcon
-            
             width="15px"
             height="15px"
             icon={faExternalLinkAlt}
           />
         </Button>
         <Modal
-        // backgroundColor={currentTheme}
-        // text={currentTheme.subtext}
           onClose={onClose}
           finalFocusRef={btnRef}
           isOpen={isOpen}
           scrollBehavior={scrollBehavior}
         >
           <ModalOverlay />
-          <ModalContent>
-            <ModalHeader>Modal Title</ModalHeader>
+          <ModalContent style={{ backgroundColor: currentTheme.secondary }}>
+            <ModalHeader>Michael "Mudcat" Ward</ModalHeader>
             <ModalCloseButton />
-            <ModalBody>{userinfo.aboutSeeMore.content}</ModalBody>
+            <ModalBody>{Parser(userinfo.aboutSeeMore.content)}</ModalBody>
             <ModalFooter>
               <Button onClick={onClose}>Close</Button>
             </ModalFooter>
