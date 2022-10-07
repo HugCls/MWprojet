@@ -40,11 +40,9 @@ export const userinfo = {
       'Michael "Mudcat" Ward, is an American blues bassist, pianist and songwriter. Primarily he plays both the double bass and bass guitar, although he has recorded tracks playing the piano. Ward has been a member of the Bluetones for over 40 years and had a concurrent spells with the Broadcasters. Ward has gained two Blues Music Awards in his own name, and has participated in the recording of over 60 albums.',
   },
   distinctions: [
-    //this text goes on your home page in table format.
-    //For aesthetics, it is advisable for you to mention upto 4 catgeories links only.
-    //For aesthetics, it is advisable for you to keep similar number of skills in each category
+  
     {
-      category: "Instrumentalist – Bass: 2018", // eg.frontend, backend, devops etc
+      category: "Instrumentalist – Bass: 2018", 
       awardLogo:
         "https://www.americanbluesscene.com/wp-content/uploads/2010/12/BMA3-234x300.jpg", //eg. react, html, python etc.
       description:
@@ -133,7 +131,7 @@ export const userinfo = {
   },
 
   about: {
-    content: "Michael “Mudcat” Ward has been a key \n\n player in the New England blues scene for over forty years. His signature traditionally-grounded approach and tone, both on the acoustic upright bass and on Fender bass, have gracefully supported many a roots artist over the years, whether in the recording studio, in clubs, theaters, outdoor venues, or on television broadcasts or film.",
+    content: "Michael “Mudcat” Ward has been a key \n\n player in the New England blues scene for over forty years. His signature traditionally-grounded approach and tone, both on the acoustic upright bass and on Fender bass, have gracefully supported many a roots artist over the years, whether in the recording studio, in clubs, theaters, outdoor venues, or on television broadcasts or film...",
   },
 
   aboutSeeMore: {
@@ -163,7 +161,7 @@ export const userinfo = {
         
         Michael “Mudcat” Ward<br>
         
-        June, 2022<p>`,
+        June, 2022</p>`,
   },
 
   experience: {

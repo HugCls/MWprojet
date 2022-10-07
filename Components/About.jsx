@@ -49,13 +49,8 @@ const About = ({ currentTheme }) => {
           color: currentTheme.subtext,
         }}
       >
-        <Button ref={btnRef} onClick={onOpen}>
-          {ctaTexts.resumeCTA}&nbsp;&nbsp;&nbsp;&nbsp;
-          <FontAwesomeIcon
-            width="15px"
-            height="15px"
-            icon={faExternalLinkAlt}
-          />
+        <Button variant="link" ref={btnRef} onClick={onOpen}>
+          <a style={{ fontSize: "16px", color: "#3182ce" }}>View More</a>
         </Button>
         <Modal
           onClose={onClose}

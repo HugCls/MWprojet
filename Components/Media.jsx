@@ -33,9 +33,7 @@ const Media = ({ currentTheme }) => {
                     })
                 }
             </div>
-            {/* {
-                userinfo.experience.visible ? <Experiences currentTheme={currentTheme} /> : null
-            } */}
+         
             {
                 userinfo.articles.visible ?
                     <div style={{ backgroundColor: currentTheme.secondary }}>
