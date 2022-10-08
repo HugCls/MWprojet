@@ -14,14 +14,13 @@ import useAxios from "../Hooks/useAxios";
 import Link from "next/link";
 
 const Discography = ({ currentTheme }) => {
- 
-
   const { data, error, loading } = useFetchData();
   data?.releases.splice(63);
-  data?.releases.splice(0, 1);
   delete data?.releases[0];
+  delete data?.releases[1];
+  delete data?.releases[2];
 
-  if (loading) console.log(data.releases);
+  // if (loading) console.log(data.releases);
   return (
     <Accordion allowToggle>
       <AccordionItem>
@@ -29,10 +28,12 @@ const Discography = ({ currentTheme }) => {
           <AccordionIcon />
         </AccordionButton>
         <AccordionPanel>
+          
           <div className={styles.timeline2}>
             <ul>
               {data?.releases.map((value, key) => {
                 return (
+                  
                   <li data-aos="fade-up" key={key}>
                     <div className={styles.content}>
                       <h3 style={{ color: currentTheme.accent }}>
@@ -44,7 +45,7 @@ const Discography = ({ currentTheme }) => {
                       <p style={{ color: currentTheme.subtext }}>
                         {value.label}
                       </p>
-                      <p style={{ color: currentTheme.subtext }}>
+                      <p style={{ color: currentTheme.tertiary }}>
                         {value.role}
                       </p>
                       <p style={{ color: currentTheme.subtext }}>
