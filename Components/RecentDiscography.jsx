@@ -18,13 +18,19 @@ const RecentDiscography = ({ currentTheme }) => {
                   <li data-aos="fade-up" key={key}>
                     <div className={styles.content}>
                       <h3 style={{ color: currentTheme.accent }}>
-                        {value.title}
+                        {value.artist}
                       </h3>
+                      <h2 style={{ color: currentTheme.subtext }}>
+                        {value.title}
+                      </h2>
                       <p style={{ color: currentTheme.subtext }}>
-                        {value.label}, {value.place}
+                        {value.label}
+                      </p>
+                      <p style={{ color: currentTheme.tertiary }}>
+                        {value.role}
                       </p>
                       <p style={{ color: currentTheme.subtext }}>
-                        {value.supports}
+                        {value.format}
                       </p>
                     </div>
                     <div
@@ -34,7 +40,7 @@ const RecentDiscography = ({ currentTheme }) => {
                         color: currentTheme.accent,
                       }}
                     >
-                      <h4>{value.time}</h4>
+                      <h4>{value.year}</h4>
                     </div>
                   </li>
                 );
