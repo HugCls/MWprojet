@@ -25,11 +25,11 @@ const Discography = ({ currentTheme }) => {
     <Accordion allowToggle>
       <AccordionItem>
         <AccordionButton justifyContent="center">
-          <AccordionIcon />
+          <AccordionIcon boxSize={10} />
         </AccordionButton>
         <AccordionPanel>
           
-          <div className={styles.timeline2}>
+          <div className={styles.timeline}>
             <ul>
               {data?.releases.map((value, key) => {
                 return (

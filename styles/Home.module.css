@@ -190,11 +190,18 @@
 }
 
 /* timeline styles */
+/* @media only screen and (max-width: 1200px){
+  .timeline{
+    width: 80vw;
+  }
+} */
+
 .timeline{
   position:relative;
   margin:2rem auto;
   padding:40px 0;
   width: 60vw;
+  height: 200%%;
   box-sizing:border-box;
 }
 .timeline:before{

@@ -8,7 +8,10 @@ import { ChakraProvider } from "@chakra-ui/react"
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+
+
 function MyApp({ Component, pageProps }) {
+  
 
   const [theme, setTheme] = useState("light")
 
@@ -36,15 +39,18 @@ function MyApp({ Component, pageProps }) {
 
   const currentTheme = theme === 'light' ? lightTheme : darkTheme
 
+
   return (
+   
     <ChakraProvider>
-      <ThemeProvider theme={theme == 'light' ? lightTheme : darkTheme}>
-        <GlobalStyles />
-        <Layout toggleTheme={toggleTheme} currentTheme={currentTheme}>
-          <Component {...pageProps} currentTheme={currentTheme} />
-        </Layout>
-      </ThemeProvider>
-    </ChakraProvider>
+        <ThemeProvider theme={theme == 'light' ? lightTheme : darkTheme}>
+          <GlobalStyles />
+          <Layout toggleTheme={toggleTheme} currentTheme={currentTheme}>
+            <Component {...pageProps} currentTheme={currentTheme} />
+          </Layout>
+        </ThemeProvider>
+      </ChakraProvider>
+      
   )
 }
 

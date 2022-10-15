@@ -68,7 +68,7 @@ export const userinfo = {
         role: "Musician & producer"
       },
       {
-        artist: "MudcaSugar Ray & The Bluetones Featuring Little Charlie Batyt Ward",
+        artist: "Sugar Ray & The Bluetones Featuring Little Charlie Batyt Ward",
         year: " 2020",
         title: "Too Far From The Bar",
         label: "Severn Records",
