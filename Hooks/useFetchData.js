@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-
+// require("dotenv").config();
 const useFetchData = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -12,8 +12,7 @@ const useFetchData = () => {
     params: { sort: "year", sort_order: "desc", per_page: "75" },
     headers: {
       Authorization:
-        'OAuth oauth_consumer_key="", oauth_nonce="1ADA5sLK9Ia5RPJxOZZKGCSSsG0XykmI", oauth_signature="k4kYQvMiQ8zP%2BucmQJ7l9uVzLIA%3D", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1663625431", oauth_token="goccowdGLBPzAZlfvRejYDekqKykERVdoNHCEsOA", oauth_version="1.0"',
-      "User-Agent": "axios/0.19.2 X-SiteSpeedApp-1 EzoicStaticCache",
+        process.env.DISCOGS_KEY,
     },
   };
 
@@ -29,7 +28,7 @@ const useFetchData = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  return {data, loading, error};
+  return { data, loading, error };
 };
 
 export default useFetchData;

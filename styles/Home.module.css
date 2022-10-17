@@ -6,8 +6,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  /* justify-content: space-around; */
   align-items: center;
-  padding: 0 25vw;
+  padding: 0 30vw;
 }
 
 .homeheading::before{
@@ -27,7 +28,7 @@
 .heading{
   position: relative;
   font-family: 'Playfair Display', serif;
-  font-size: 50px;
+  font-size: 60px;
   margin: 0 1rem;
 }
 
@@ -51,7 +52,7 @@
 }
 
 .cta2{
-  font-size: 14px;
+  font-size: 20px;
   text-decoration: underline;
 }
 
@@ -190,18 +191,13 @@
 }
 
 /* timeline styles */
-/* @media only screen and (max-width: 1200px){
-  .timeline{
-    width: 80vw;
-  }
-} */
+
 
 .timeline{
   position:relative;
   margin:2rem auto;
   padding:40px 0;
   width: 60vw;
-  height: 200%%;
   box-sizing:border-box;
 }
 .timeline:before{
@@ -209,7 +205,7 @@
   position:absolute;
   left:50%;
   width:2px;
-  height:130%;
+  height:200%;
   background:#a8a8a8;
 }
 .timeline ul{
@@ -448,7 +444,7 @@
   .timeline:before{
     left:20px;
     top: 10px;
-    height:90%;
+    height:130%%;
   }
   .timeline ul li:nth-child(odd),
   .timeline ul li:nth-child(even)
@@ -470,6 +466,38 @@
     right:inherit;
   }
   /* **************************** */
+
+    /* timeline2 */
+    .timeline2{
+      width: 90vw;
+      padding-bottom: 0;
+    }
+  
+    .timeline2:before{
+      left:20px;
+      top: 10px;
+      height:200%;
+    }
+    .timeline2 ul li:nth-child(odd),
+    .timeline2 ul li:nth-child(even)
+    {
+      width:100%;
+      text-align:left;
+      padding-bottom:50px;
+    }
+    .timeline2 ul li:nth-child(odd):before,
+    .timeline2 ul li:nth-child(even):before
+    {
+      top:-18px;
+      left:16px;
+    }
+    .timeline2 ul li:nth-child(odd) .time,
+    .timeline2 ul li:nth-child(even) .time{
+      top:-30px;
+      left:50px;
+      right:inherit;
+    }
+    /* **************************** */
 }
 
 @media only screen and (max-width: 535px){

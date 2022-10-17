@@ -1,18 +1,17 @@
 //PLEASE FOLLOW THE FORMAT OF THIS FILE.
 import {
-  faMediumM,
   faFacebook,
-  faTwitter,
-  faInstagram,
+  faSpotify,
   faYoutube,
-  faBehance,
 } from "@fortawesome/free-brands-svg-icons";
-import { FaYoutube, FaSpotify } from "react-icons/fa";
 
 export const userinfo = {
-  logoText: 'Michael "Mudcat" Ward', //This text is visible on your navbar and footer like your logo.
+  logoText: "Michael 'Mudcat' Ward",
+  logoTextFn: "Michael ", //This text is visible on your navbar and footer like your logo.
+  logoTextMn: "'Mudcat'",
+  logoTextLn: " Ward",
   contact: {
-    email: "michaelscott@email.com", //It is always a good idea to mention your email on your website. Good platform to communicate.
+    email: "mudcatward@aol.com", //It is always a good idea to mention your email on your website. Good platform to communicate.
     phone: "1234567890", //Phone number is optional, if you dont want it, consider leaving it blank .
     countrycode: "+91", //It is advisable to add the country code incase you mention your contact number.
   },
@@ -25,12 +24,12 @@ export const userinfo = {
     {
       type: "spotify",
       link: "https://open.spotify.com/artist/2iFm95ocZxcqHyPjVdwjpg",
-      icon: FaSpotify,
+      icon: faSpotify,
     },
     {
       type: "youtube",
       link: "https://www.youtube.com/watch?v=H9ZcNQw0pqo&list=OLAK5uy_k_pyLcuj6Bt0sg__6hc8VyzK_CX3IeQ9k",
-      icon: FaYoutube,
+      icon: faYoutube,
     },
   ],
   greeting: {
@@ -40,9 +39,8 @@ export const userinfo = {
       'Michael "Mudcat" Ward, is an American blues bassist, pianist and songwriter. Primarily he plays both the double bass and bass guitar, although he has recorded tracks playing the piano. Ward has been a member of the Bluetones for over 40 years and had a concurrent spells with the Broadcasters. Ward has gained two Blues Music Awards in his own name, and has participated in the recording of over 60 albums.',
   },
   distinctions: [
-  
     {
-      category: "Instrumentalist – Bass: 2018", 
+      category: "Instrumentalist – Bass: 2018",
       awardLogo:
         "https://www.americanbluesscene.com/wp-content/uploads/2010/12/BMA3-234x300.jpg", //eg. react, html, python etc.
       description:
@@ -65,7 +63,7 @@ export const userinfo = {
         title: "Michael Mudcat Ward",
         label: "BMI",
         format: "LP TP CD",
-        role: "Musician & producer"
+        role: "Musician & producer",
       },
       {
         artist: "Sugar Ray & The Bluetones Featuring Little Charlie Batyt Ward",
@@ -134,7 +132,8 @@ export const userinfo = {
   },
 
   about: {
-    content: "Michael “Mudcat” Ward has been a key \n\n player in the New England blues scene for over forty years. His signature traditionally-grounded approach and tone, both on the acoustic upright bass and on Fender bass, have gracefully supported many a roots artist over the years, whether in the recording studio, in clubs, theaters, outdoor venues, or on television broadcasts or film...",
+    content:
+      "Michael “Mudcat” Ward has been a key \n\n player in the New England blues scene for over forty years. His signature traditionally-grounded approach and tone, both on the acoustic upright bass and on Fender bass, have gracefully supported many a roots artist over the years, whether in the recording studio, in clubs, theaters, outdoor venues, or on television broadcasts or film...",
   },
 
   aboutSeeMore: {

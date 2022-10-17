@@ -1,6 +1,11 @@
 .logo, .footerlogo{
   font-family: 'Playfair Display', serif;
   font-size: 30px;
+  
+}
+.logoMiddle{
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
 }
 
 .navbar{

@@ -2,7 +2,6 @@ import styles from "../styles/Home.module.css";
 import React from "react";
 import Link from "next/link";
 import Parser from "html-react-parser";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useDisclosure } from "@chakra-ui/react";
 import {
   Button,
@@ -14,7 +13,6 @@ import {
   ModalBody,
   ModalCloseButton,
 } from "@chakra-ui/react";
-import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 
 import { userinfo, ctaTexts, headings } from "../Constants/userinfo";
 
@@ -34,10 +32,14 @@ const About = ({ currentTheme }) => {
       <p
         className={styles.aboutText}
         style={{ color: currentTheme.subtext }}
-        data-aos="fade-up"
+        data-aos={"fade-up"}
       >
-        {userinfo.about.content}
+        {userinfo.about.content} &nbsp; &nbsp;
+        <Button variant="link" ref={btnRef} onClick={onOpen}>
+          <a style={{ fontSize: "16px", color: "#3182ce" }}>View More</a>
+        </Button>
       </p>
+
       <div
         data-aos="fade-up"
         style={{
@@ -49,9 +51,6 @@ const About = ({ currentTheme }) => {
           color: currentTheme.subtext,
         }}
       >
-        <Button variant="link" ref={btnRef} onClick={onOpen}>
-          <a style={{ fontSize: "16px", color: "#3182ce" }}>View More</a>
-        </Button>
         <Modal
           onClose={onClose}
           finalFocusRef={btnRef}
@@ -68,6 +67,20 @@ const About = ({ currentTheme }) => {
             </ModalFooter>
           </ModalContent>
         </Modal>
+        <div style={{ textAlign: "center", padding: "1rem 0" }}>
+          <Link href="/contact">
+            <a
+              target="_blank"
+              className={styles.cta3}
+              style={{
+                background: "transparent",
+                border: `2px solid ${currentTheme.accent}`,
+              }}
+            >
+              {ctaTexts.capabCTA} <span>&gt;</span>
+            </a>
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ import HomeGigs from "./HomeGigs";
 import Skills from "./Distinctions";
 import RecentDiscography from "./RecentDiscography";
 import Discography from "./Discography";
+import ScrollToTop from "./ScrollToTop";
 import { gigs } from "../Constants/gigs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
@@ -52,19 +53,7 @@ const HomePage = ({ currentTheme }) => {
             </div>
           );
         })}
-        <div style={{ textAlign: "center", paddingBottom: "2rem" }}>
-          <Link href="/gigs">
-            <a
-              className={styles.cta3}
-              style={{
-                backgroundColor: currentTheme.accent,
-                color: currentTheme.contrastText,
-              }}
-            >
-              {ctaTexts.gigsCTA} <span>&gt;</span>
-            </a>
-          </Link>
-        </div>
+        
       </div>
       <div
         id="skills"
@@ -74,8 +63,10 @@ const HomePage = ({ currentTheme }) => {
         <Skills currentTheme={currentTheme} />
       </div>
       <RecentDiscography currentTheme={currentTheme} />
+      
         <Discography currentTheme={currentTheme} />
-   
+        
+
       <About 
       currentTheme = {currentTheme}/>
     </div>

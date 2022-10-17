@@ -35,7 +35,7 @@ const Carousel = ({ children, currentTheme }) => {
       if (!paused) {
         updateIndex(activeIndex + 1);
       }
-    }, 10000);
+    }, 10_000);
 
     return () => {
       if (interval) {

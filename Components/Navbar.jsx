@@ -43,7 +43,14 @@ const Navbar = ({ toggleTheme, currentTheme }) => {
       >
         <Link href="/">
           <a>
-            <h2 className={styles.logo}>{userinfo.logoText}</h2>
+            <h2 className={styles.logo}>
+              {userinfo.logoTextFn}
+              <span className={styles.logoMiddle}>
+                {" "}
+                &nbsp; &nbsp;{userinfo.logoTextMn} &nbsp; &nbsp;
+              </span>
+              <span className={styles.logo}>{userinfo.logoTextLn}</span>
+            </h2>
           </a>
         </Link>
         {!drawerVisible ? (

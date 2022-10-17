@@ -1,6 +1,7 @@
 import styles from "../styles/Home.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTelegramPlane } from "@fortawesome/free-brands-svg-icons";
+import { faTicketAlt } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 
 const HomeGigs = ({ currentTheme, id, gig }) => {
@@ -23,7 +24,7 @@ const HomeGigs = ({ currentTheme, id, gig }) => {
         >
           <Link href={gig.ticketLink}>
             <a target="_blank">
-              <FontAwesomeIcon icon={faTelegramPlane} />
+              <FontAwesomeIcon icon={faTicketAlt} />
             </a>
           </Link>
         </div>
@@ -41,6 +42,7 @@ const HomeGigs = ({ currentTheme, id, gig }) => {
         <Link href={gig.ticketLink}>
           <a
             className={styles.cta2}
+            fontSize="25px"
             style={{ color: currentTheme.tertiary }}
             target="_blank"
           >

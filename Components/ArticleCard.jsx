@@ -93,10 +93,15 @@ const ArticleCard = ({ article, currentTheme }) => {
               <ModalHeader>{article.title}</ModalHeader>
               <ModalCloseButton />
               <ModalBody>
-                {Parser(article.description)} <Button variant="link">
-                <a href={article.link} target="_blank" style={{ fontSize: "16px", color: "#3182ce"}}>
-                  {article.phraseLink}
-                </a>
+                {Parser(article.description)}{" "}
+                <Button variant="link">
+                  <a
+                    href={article.link}
+                    target="_blank"
+                    style={{ fontSize: "16px", color: "#3182ce" }}
+                  >
+                    {article.phraseLink}
+                  </a>
                 </Button>
               </ModalBody>
               <ModalFooter>
