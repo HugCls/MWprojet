@@ -8,8 +8,9 @@ export const custom_articles = [
     title: "Blues Blast Magazine",
     issue: "August 11, 2022",
     description:
-      "“Most sidemen don’t get a lot of attention. Some guys they go to gigs and they see there’s a whole band up there and they actually see that there’s something goin’ on that’s a product of the whole.” Michael “Mudcat” Ward creates ",
+      "“Most sidemen don’t get a lot of attention. Some guys they go to gigs and they see there’s a whole band up there and they actually see that there’s something goin’ on that’s a product of the whole.” Michael “Mudcat” Ward creates... view full article : " ,
     link: "https://www.bluesblastmagazine.com/michael-mudcat-ward-sidemans-song/",
+    phraseLink: "Read the full article",
     thumbnail: bluesblast,
     categories: ["bluesblastmagazine", "08/2022", "article"],
   },
@@ -27,6 +28,7 @@ export const custom_articles = [
         “The drummer and bass player, Billy Conway and Mudcat Ward, do not see themselves as soloists, and even the guitarists and steel player seem a little taken aback. But Dick is not about to give up. ‘Just give me what’s in there,’ Dick coaxes them. “Oh, that’s good,’ he says encouragingly to each of the players in turn, and while the song is actually being recorded, there is a point of such stillness, a moment of such utter lostness and tranquility, that it makes you want to cry.” (Pg. 196)
         `,
     link: "https://www.amazon.fr/Looking-Get-Lost-Adventures-Writing/dp/0316412627",
+    phraseLink: "Buy me",
     thumbnail: getlost,
     categories: ["Peter Guralnick", "2020", "book"],
   },
@@ -40,6 +42,7 @@ export const custom_articles = [
       Page 273 gives detail of the Breminale Festival performance in Bremen, Germany which resulted in the live recording of Jimmy Rogers with Ronnie Earl and the Broadcasters (Rounder).
       "`,
     link: "https://www.amazon.fr/Blues-All-Day-Long-Rogers/dp/0252080173",
+    phraseLink: "Buy me",
     thumbnail: daylong,
     categories: ["Wayne Everett Goins", "2014", "book"],
   },
@@ -61,6 +64,7 @@ export const custom_articles = [
       “”’That was a fun rhythm section, Mudcat on bass,’ says (Levon) Helm, who played with Muddy as part of The Band’s The Last Waltz production. ‘We just tried to support Hubert’s fills and flavoring We all got around Hubert and made up the rhythm section.’” (Pg 192)
       "`,
     link: "https://www.amazon.fr/Incurable-Blues-Troubles-Triumph-Legend/dp/0879308338",
+    phraseLink: "Buy me",
     thumbnail: incurable,
     categories: ["Will Romano", "2005", "book"],
   },
