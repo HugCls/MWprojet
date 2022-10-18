@@ -63,7 +63,7 @@ const About = ({ currentTheme }) => {
             <ModalCloseButton />
             <ModalBody>{Parser(userinfo.aboutSeeMore.content)}</ModalBody>
             <ModalFooter>
-              <Button onClick={onClose}>Close</Button>
+              <Button backgroundColor={currentTheme.secondary} onClick={onClose}>Close</Button>
             </ModalFooter>
           </ModalContent>
         </Modal>
