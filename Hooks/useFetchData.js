@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-// require("dotenv").config();
+
 const useFetchData = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);

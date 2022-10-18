@@ -14,7 +14,7 @@ import {
   ModalFooter,
 } from "@chakra-ui/react";
 import Link from "next/link";
-import styles from "../styles/Gigs.module.css";
+
 
 const ArticleCard = ({ article, currentTheme }) => {
   const btnRef = React.useRef(null);
@@ -105,7 +105,7 @@ const ArticleCard = ({ article, currentTheme }) => {
                 </Button>
               </ModalBody>
               <ModalFooter>
-                <Button onClick={onClose}>Close</Button>
+                <Button onClick={onClose} backgroundColor={currentTheme.secondary}>Close</Button>
               </ModalFooter>
             </ModalContent>
           </Modal>

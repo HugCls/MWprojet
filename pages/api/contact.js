@@ -6,11 +6,7 @@ export default function (req, res) {
   const transporter = nodemailer.createTransport({
     port: 465,
     host: "smtp.gmail.com",
-    auth: {
-      user: process.env.SENDER,
-      pass: process.env.PASSWORD,
-    },
-    secure: true,
+    
   });
   const mailData = {
     from: process.env.SENDER,

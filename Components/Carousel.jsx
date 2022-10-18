@@ -35,7 +35,7 @@ const Carousel = ({ children, currentTheme }) => {
       if (!paused) {
         updateIndex(activeIndex + 1);
       }
-    }, 10_000);
+    }, 8_000);
 
     return () => {
       if (interval) {
@@ -69,7 +69,7 @@ const Carousel = ({ children, currentTheme }) => {
       <div className={styles.articleHeading}>{headings.articles}</div>
       <div
         className={styles.inner}
-        style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+        style={{ transform: `translateX(-${activeIndex * 33}%)` }}
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >

@@ -7,8 +7,6 @@ import {
   AccordionPanel,
   AccordionIcon,
 } from "@chakra-ui/react";
-import { useState, useEffect } from "react";
-import { userinfo } from "../Constants/userinfo";
 import ScrollToTop from "../Components/ScrollToTop";
 import useFetchData from "../Hooks/useFetchData";
 import Link from "next/link";
@@ -24,7 +22,7 @@ const Discography = ({ currentTheme }) => {
   return (
     <Accordion allowToggle>
       <AccordionItem>
-        <AccordionButton justifyContent="center">
+        <AccordionButton justifyContent="center"> see complete discography
           <AccordionIcon boxSize={10} ml="2px" />
         </AccordionButton>
 

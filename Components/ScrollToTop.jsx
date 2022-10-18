@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { ArrowUpIcon } from "@chakra-ui/icons";
-import { Box, Button, AccordionButton } from "@chakra-ui/react";
+import { Box, AccordionIcon, AccordionButton } from "@chakra-ui/react";
 
-export default function ScrollToTop() {
+export default function ScrollToTop({ currentTheme }) {
   const [isVisible, setIsVisible] = useState(false);
 
   const ScrollToTop = () => {
@@ -34,7 +33,11 @@ export default function ScrollToTop() {
           right={["16px", "84px"]}
           zIndex={3}
         >
-          <AccordionButton fontSize={"25px"}>Close</AccordionButton>
+          <AccordionButton fontSize={"25px"} >
+            {" "}
+            <AccordionIcon />
+            Close
+          </AccordionButton>
         </Box>
       )}
     </>
