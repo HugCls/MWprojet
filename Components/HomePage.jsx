@@ -5,7 +5,6 @@ import HomeGigs from "./HomeGigs";
 import Skills from "./Distinctions";
 import RecentDiscography from "./RecentDiscography";
 import Discography from "./Discography";
-import ScrollToTop from "./ScrollToTop";
 import { gigs } from "../Constants/gigs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
