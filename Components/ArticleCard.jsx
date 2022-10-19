@@ -31,10 +31,12 @@ const ArticleCard = ({ article, currentTheme }) => {
         overflow="hidden"
         bg={currentTheme.secondary}
       >
-        <Image src={article.thumbnail || article.cover_image}
-        alt="thumbnail image"
-        height="500"
-        width="500" />
+        <Image
+          src={article.thumbnail || article.cover_image}
+          alt="thumbnail image"
+          height="500"
+          width="500"
+        />
         <Box p="6">
           <HStack spacing={2}>
             {article.categories

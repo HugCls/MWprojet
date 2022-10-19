@@ -75,7 +75,7 @@ const Carousel = ({ children, currentTheme }) => {
       >
         {React.Children.map(children, (child, index) => {
           return React.cloneElement(child, {
-            width: isSmall ? (isVerySmall ? "100%" : "50%") : "100%",
+            width: isSmall ? (isVerySmall ? "100%" : "50%") : "33.33%",
           });
         })}
       </div>
