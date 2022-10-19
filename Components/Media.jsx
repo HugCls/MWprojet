@@ -17,7 +17,6 @@ const Media = ({ currentTheme }) => {
     setArticleList(custom_articles);
   }, []);
 
-
   return (
     <div>
       <div className={styles.workHeading}>{headings.workMainPage}</div>
@@ -35,6 +34,7 @@ const Media = ({ currentTheme }) => {
         })}
       </div>
 
+      
       {userinfo.articles.visible ? (
         <div style={{ backgroundColor: currentTheme.secondary }}>
           {articleList ? (
@@ -42,10 +42,7 @@ const Media = ({ currentTheme }) => {
               {articleList.slice(0, 6).map((article, key) => {
                 return (
                   <CarouselItem key={key} currentTheme={currentTheme}>
-                    <ArticleCard
-                      article={article}
-                      currentTheme={currentTheme}
-                    />
+                    <ArticleCard article={article} currentTheme={currentTheme} />
                   </CarouselItem>
                 );
               })}
@@ -53,8 +50,8 @@ const Media = ({ currentTheme }) => {
           ) : null}
         </div>
       ) : null}
-      
-      {userinfo.book ? (
+
+      {/* {userinfo.book ? (
         
         <div style={{ backgroundColor: currentTheme.secondary }}>
           <div className={styles.articleHeading}>{headings.book}</div>
@@ -70,7 +67,7 @@ const Media = ({ currentTheme }) => {
             </div>
           ) : null}
         </div>
-      ) : null}
+      ) : null} */}
     </div>
   );
 };
