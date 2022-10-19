@@ -83,53 +83,7 @@ export const userinfo = {
       },
     ],
   },
-  discography: {
-    visible: true, //set this to false if you want to omit this section
-    discographyList: [
-      {
-        time: "May - Oct 2020",
-        title: "My Isabelle",
-        label: "BMI",
-        place: "Cambridge, MA",
-        supports: "LP TP CD",
-      },
-      {
-        time: "May - Oct 2020",
-        title: "My Isabelle",
-        label: "BMI",
-        place: "Cambridge, MA",
-        supports: "LP TP CD",
-      },
-      {
-        time: "May - Oct 2020",
-        title: "My Isabelle",
-        label: "BMI",
-        place: "Cambridge, MA",
-        supports: "LP TP CD",
-      },
-      {
-        time: "May - Oct 2020",
-        title: "My Isabelle",
-        label: "BMI",
-        place: "Cambridge, MA",
-        supports: "LP TP CD",
-      },
-      {
-        time: "May - Oct 2020",
-        title: "My Isabelle",
-        label: "BMI",
-        place: "Cambridge, MA",
-        supports: "LP TP CD",
-      },
-      {
-        time: "May - Oct 2020",
-        title: "My Isabelle",
-        label: "BMI",
-        place: "Cambridge, MA",
-        supports: "LP TP CD",
-      },
-    ],
-  },
+ 
 
   about: {
     content:
@@ -202,6 +156,10 @@ export const userinfo = {
     //set this to false if you want to omit this section
     visible: true,
   },
+  book: {
+    //set this to false if you want to omit this section
+    visible: true,
+  },
 };
 
 export const headings = {
@@ -214,6 +172,7 @@ export const headings = {
   discography: "Discography",
   experience: "Experiences",
   articles: "They wrote about me",
+  book: "I write",
   contact: "Contact Me",
 };
 

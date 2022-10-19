@@ -28,7 +28,7 @@ const Discography = ({ currentTheme }) => {
 
         <AccordionPanel>
           <ScrollToTop />
-          <div className={styles.discographyWrapper}>
+          <div >
             <div className={styles.timeline2}>
               <ul>
                 {data?.releases.map((value, key) => {

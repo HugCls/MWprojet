@@ -205,7 +205,7 @@
   position:absolute;
   left:50%;
   width:2px;
-  height:85%;
+  height:97%;
   background:#a8a8a8;
 }
 .timeline ul{
@@ -298,9 +298,9 @@
 .timeline2{
   position:relative;
   margin:2rem auto;
-  padding:40px 0;
+  /* padding:20px 0; */
   width: 60vw;
-  /* box-sizing:border-box; */
+  box-sizing:border-box;
 }
 .timeline2:before{
   content:'';
@@ -311,7 +311,7 @@
   background:#a8a8a8;
 }
 .timeline2 ul{
-  padding:0;
+  padding:40px 0;
   margin:0;
 }
 .timeline2 ul li{

@@ -52,9 +52,9 @@ const Footer = ({ currentTheme }) => {
               <li>About</li>
             </a>
           </Link>
-          <Link href="/Gigs">
+          <Link href="/media">
             <a>
-              <li>Gigs</li>
+              <li>Media</li>
             </a>
           </Link>
           <Link href="/contact">
@@ -64,6 +64,7 @@ const Footer = ({ currentTheme }) => {
           </Link>
         </ul>
       </div>
+
       <hr
         style={{
           height: "1px",
@@ -72,6 +73,30 @@ const Footer = ({ currentTheme }) => {
           opacity: "0.5",
         }}
       />
+      <div >
+      <div className={styles.footerbottom} style={{marginTop: '30px'}}>
+        Mudcat Ward recommends the bass players’ website for strings and other
+        supplies, Gollihur Music, <br></br>LLC Phone: 856-292-3194 Email:
+        queries@gollihurmusic.com{" "}
+        <a
+          href="https://www.gollihurmusic.com"
+          target={"_blank"}
+          style={{ fontSize: "16px", color: "#3182ce" }}
+        >
+          Visit their website
+        </a>
+      </div>
+      <div className={styles.footerbottom}>
+        Travel easily with your bass with{" "}
+        <a
+          href="https://www.travelbass.it/"
+          target={"_blank"}
+          style={{ fontSize: "16px", color: "#3182ce" }}
+        >
+          Travelbass{" "}
+        </a>
+      </div>
+      </div>
     </div>
   );
 };
