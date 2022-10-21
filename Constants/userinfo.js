@@ -171,7 +171,7 @@ export const headings = {
   about: "About Me",
   discography: "Discography",
   experience: "Experiences",
-  articles: "They wrote about me",
+  articles: "Interview and other sources",
   book: "I write",
   contact: "Contact Me",
 };

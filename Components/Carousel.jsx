@@ -69,7 +69,7 @@ const Carousel = ({ children, currentTheme }) => {
       <div className={styles.articleHeading}>{headings.articles}</div>
       <div
         className={styles.inner}
-        style={{ transform: `translateX(-${activeIndex * 33}%)` }}
+        style={{ transform: `translateX(-${activeIndex * 100}%)`, transition: "transform 0.7s ease-in-out" }}
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
