@@ -33,11 +33,15 @@ function MyApp({ Component, pageProps }) {
     });
   }, []);
 
+  
+
   const toggleTheme = () => {
     theme == 'light' ? setTheme('dark') : setTheme('light')
   }
 
   const currentTheme = theme === 'light' ? lightTheme : darkTheme
+
+  
 
 
   return (
