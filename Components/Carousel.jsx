@@ -66,7 +66,7 @@ const Carousel = ({ children, currentTheme }) => {
       style={{ backgroundColor: currentTheme.secondary }}
       data-aos="fade-up"
     >
-      <div className={styles.articleHeading}>{headings.articles}</div>
+      <div className={styles.articleHeading}>{headings.articles || headings.book}</div>
       <div
         className={styles.inner}
         style={{ transform: `translateX(-${activeIndex * 100}%)`, transition: "transform 0.7s ease-in-out" }}

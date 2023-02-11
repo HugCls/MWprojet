@@ -1,20 +1,27 @@
 import styles from "../styles/Gigs.module.css";
 import MediaProject from "./MediaProject";
 import ArticleCard from "./ArticleCard";
+import BookCard from "./BookCard";
 import { project } from "../Constants/project";
+import { custom_book } from "../Constants/book";
 import { custom_articles } from "../Constants/articles";
 import { useState, useEffect } from "react";
 import { headings, userinfo } from "../Constants/userinfo";
 import Carousel, { CarouselItem } from "./Carousel";
-import Experiences from "./Experiences";
+import BookCarousel, { BookCarouselItem} from "./BookCarousel";
 
 const Media = ({ currentTheme }) => {
   const [articleList, setArticleList] = useState([]);
+  const [bookList, setBookList] = useState([]);
 
   useEffect(() => {
     setArticleList(custom_articles);
   }, []);
+  useEffect(() => {
+    setBookList(custom_book);
+  }, []);
 
+ 
   return (
     <div>
       <div className={styles.workHeading}>{headings.workMainPage}</div>
@@ -47,10 +54,32 @@ const Media = ({ currentTheme }) => {
                 );
               })}
             </Carousel>
+            
           ) : null}
-        </div>
+        </div>) : null}
+              {userinfo.book.visible ? (
+                <div style={{ backgroundColor: currentTheme.secondary }}>
+                  {bookList ? (
+                    <BookCarousel currentTheme={currentTheme}>
+                      {bookList.map((book, key) => {
+                        return (
+                          <BookCarouselItem key={key} currentTheme={currentTheme}>
+                            <BookCard
+                              book={book}
+                              currentTheme={currentTheme}
+                            />
+                          </BookCarouselItem>
+                        );
+                      })}
+                    </BookCarousel>
+                    
+                  ) : null}
+                </div>
+        
       ) : null}
+      
     </div>
+    
   );
 };
 
