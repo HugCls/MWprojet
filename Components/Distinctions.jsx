@@ -6,9 +6,9 @@ import { userinfo, ctaTexts, headings } from "../Constants/userinfo";
 const Skills = ({ currentTheme }) => {
   return (
     <>
-      <h1 className={styles.workheading} data-aos="fade-up">
+      {/* <h1 className={styles.workheading} data-aos="fade-up">
         {headings.distinctions}
-      </h1>
+      </h1> */}
       <div className={styles.skills} style={{ color: currentTheme.subtext }}>
         {userinfo.distinctions
           ? userinfo.distinctions.map((value, key1) => {
@@ -37,6 +37,10 @@ const Skills = ({ currentTheme }) => {
                     </div>
                     <div style={{ position: "relative", top: "20px" }}>
                       <h2>{value.description}</h2>
+                    </div>
+                  {/* todo center  */}
+                    <div style={{ position: "relative", top: "20px" }}>
+                      <h2>{value.description2}</h2>
                     </div>
                   </ul>
                   {userinfo.distinctions.indexOf(value) ===

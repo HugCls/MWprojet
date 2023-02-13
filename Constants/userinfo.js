@@ -36,23 +36,25 @@ export const userinfo = {
     //this text goes on your landing page
     title: 'Michael "Mudcat" Ward',
     subtitle:
-      'Michael "Mudcat" Ward, is an American blues bassist, pianist and songwriter. Primarily he plays both the double bass and bass guitar, although he has recorded tracks playing the piano. Ward has been a member of the Bluetones for over 40 years and had a concurrent spells with the Broadcasters. Ward has gained two Blues Music Awards in his own name, and has participated in the recording of over 60 albums.',
+      'Michael "Mudcat" Ward is an American blues bassist, pianist and songwriter. He plays both the double bass and Fender bass guitar. Ward has been a member of Sugar Ray and the Bluetones for over 40 years. Ward has won two Blues Music Awards (Blues Foundation, Memphis, TN) in the bass category, and has participated in the recording of over 60 albums.',
   },
   distinctions: [
     {
-      category: "Instrumentalist – Bass: 2018",
+      category: "Instrumentalist – Bass: 2018, 2020",
+    // nomination
       awardLogo:
         "https://www.americanbluesscene.com/wp-content/uploads/2010/12/BMA3-234x300.jpg", //eg. react, html, python etc.
       description:
-        "American Blues Music Award for the best bassist in the world", //eg. react, html, python etc.
+        "American Blues Music Award : instrumentalist - bass", //eg. react, html, python etc.
+      description2: "Blues Foundation, Memphis, TN"
     },
-    {
-      category: "Instrumentalist – Bass: 2020",
-      awardLogo:
-        "https://www.americanbluesscene.com/wp-content/uploads/2010/12/BMA3-234x300.jpg", //eg. react, html, python etc.
-      description:
-        "American Blues Music Award for the best bassist in the world", //eg. react, html, python etc.
-    },
+    // {
+    //   category: "Instrumentalist – Bass: 2020",
+    //   awardLogo:
+    //     "https://www.americanbluesscene.com/wp-content/uploads/2010/12/BMA3-234x300.jpg", //eg. react, html, python etc.
+    //   description:
+    //     "American Blues Music Award : instrumentalist - bass", //eg. react, html, python etc.
+    // },
   ],
   recentDiscography: {
     visible: true, //set this to false if you want to omit this section
@@ -120,38 +122,7 @@ export const userinfo = {
         June, 2022</p>`,
   },
 
-  experience: {
-    visible: true, //set this to false if you want to omit this section
-    experienceList: [
-      {
-        company: "Dunder Mifflin", //company name eg.Microsoft
-        companylogo:
-          "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/why-did-steve-carell-leave-the-office-1585597666.jpg?crop=0.563xw:0.844xh;0.287xw,0.128xh&resize=480:*", //companylogo
-        position: "Regional Manager", //post you held eg.Senior SDE
-        time: "March 2020 - May 2020", //timespan
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum", //eg. spearheaded the graphics team in designing SASS product UIs
-      },
-      {
-        company: "Dunder Mifflin",
-        companylogo:
-          "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/why-did-steve-carell-leave-the-office-1585597666.jpg?crop=0.563xw:0.844xh;0.287xw,0.128xh&resize=480:*",
-        position: "Regional Manager",
-        time: "March 2020 - May 2020",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum",
-      },
-      {
-        company: "Dunder Mifflin",
-        companylogo:
-          "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/why-did-steve-carell-leave-the-office-1585597666.jpg?crop=0.563xw:0.844xh;0.287xw,0.128xh&resize=480:*",
-        position: "Regional Manager",
-        time: "March 2020 - May 2020",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum",
-      },
-    ],
-  },
+ 
   articles: {
     //set this to false if you want to omit this section
     visible: true,
@@ -171,8 +142,8 @@ export const headings = {
   about: "About Me",
   discography: "Discography",
   experience: "Experiences",
-  articles: "Interview and other sources",
-  book: "I write",
+  articles: "Interview & Mentions in Other Publications",
+  book: "Publications",
   contact: "Contact Me",
 };
 

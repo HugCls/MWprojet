@@ -1,6 +1,6 @@
 import tarzan from "../styles/projects/tarzan.jpg";
 
-export const bookList = 
+export const custom_book = 
    [ {
       title: "Ellison 'Tarzan' Brown: The Narragansett Indian Who Twice Won the Boston Marathon",
       issue: "August 11, 2022",
