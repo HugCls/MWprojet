@@ -1,35 +1,26 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-const useFetchData = () => {
+const useFetchDiscs = (sortOption = "year") => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const options = {
-    method: "GET",
-    url: "https://api.discogs.com/artists/1368289/releases",
-    params: { sort: "year", sort_order: "desc", per_page: "75" },
-    headers: {
-      Authorization:
-        process.env.DISCOGS_KEY,
-    },
-  };
-
+ 
   useEffect(() => {
     setLoading(true);
     axios
-      .request(options)
+      .get(
+        "https://www.wp.michaelmudcatward.com/wp-json/acf/v3/discs?per_page=100"
+      )
       .then((response) => {
         setData(response.data);
-        // console.log(response.data);
-
       })
       .catch((error) => setError(error))
       .finally(() => setLoading(false));
-  }, []);
+  }, [sortOption]);
 
   return { data, loading, error };
 };
 
-export default useFetchData;
+export default useFetchDiscs

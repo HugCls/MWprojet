@@ -22,27 +22,27 @@ const HomeGigs = ({ currentTheme, id, gig }) => {
             borderColor: currentTheme.accent,
           }}
         >
-          {/* <Link href={gig.ticketLink}>
+          <Link href={gig.ticketLink}>
             <a target="_blank">
               <FontAwesomeIcon icon={faTicketAlt} />
             </a>
-          </Link> */}
+          </Link>
         </div>
         <h1 className={styles.projectTitle}>{gig.date}</h1>
         <h1 className={styles.projectTitle}>{gig.nameOfEvent}</h1>
         <h2
           className={styles.projectTitle}
-          // style={{ color: currentTheme.subtext }}
+          style={{ color: currentTheme.subtext }}
         >
           {gig.location}
         </h2>
-        {/* <h3 className={styles.projectSubTitle}
+        <h3 className={styles.projectSubTitle}
           style={{ color: currentTheme.subtext}}>
           {gig.date}
-          </h3> */}
-        {/* <Link href={gig.ticketLink}> */}
+          </h3>
+        <Link href={gig.ticketLink}>
           {/* change to 'additional info' with separation line */}
-          {/* <a
+          <a
             className={styles.cta2}
             fontSize="25px"
             style={{ color: currentTheme.tertiary }}
@@ -50,7 +50,7 @@ const HomeGigs = ({ currentTheme, id, gig }) => {
           >
             Buy tickets
           </a>
-        </Link> */}
+        </Link>
       </div>
     </div>
   );

@@ -10,6 +10,7 @@ import {
 import ScrollToTop from "../Components/ScrollToTop";
 import useFetchData from "../Hooks/useFetchData";
 import Link from "next/link";
+import useFetchDiscs from "../Hooks/useFetchDiscs";
 
 const Discography = ({ currentTheme }) => {
   const { data, error, loading } = useFetchData();
@@ -18,7 +19,9 @@ const Discography = ({ currentTheme }) => {
   delete data?.releases[1];
   delete data?.releases[2];
 
-  // if (loading) console.log(data.releases);
+  // const { data, error, loading } = useFetchDiscs();
+
+  if (loading) console.log(data);
   return (
     <Accordion allowToggle>
       <AccordionItem>
