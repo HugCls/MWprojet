@@ -28,15 +28,20 @@ export default function ScrollToTop({ currentTheme }) {
       {isVisible && (
         <Box
           onClick={ScrollToTop}
-          position="fixed"
+          // position="fixed"
           bottom="20px"
           right={["16px", "84px"]}
           zIndex={3}
         >
-          <AccordionButton fontSize={"25px"} >
+          <AccordionButton
+            display="flex"
+            justifyContent="center"
+            marginTop={"5px"}
+            fontSize={"25px"}
+          >
             {" "}
             <AccordionIcon />
-            Close
+            Close discography
           </AccordionButton>
         </Box>
       )}

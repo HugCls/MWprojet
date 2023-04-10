@@ -40,8 +40,8 @@ export const userinfo = {
   },
   distinctions: [
     {
-      category: "Instrumentalist – Bass: 2018, 2020",
-    // nomination
+      category: "Winner Instrumentalist – Bass: 2018, 2020",
+      nomination: "Nominated 13 times",
       awardLogo:
         "https://www.americanbluesscene.com/wp-content/uploads/2010/12/BMA3-234x300.jpg", //eg. react, html, python etc.
       description:
@@ -137,7 +137,7 @@ export const headings = {
   //you can customise all the headings here.
   gigsHomePage: "Next Gigs",
   gigsMainPage: "Projects",
-  distinctions: "Distinctions",
+  distinctions: "Awards & Nominations",
   gigs: "Next Gigs",
   about: "About Me",
   discography: "Discography",

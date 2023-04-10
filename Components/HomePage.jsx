@@ -2,6 +2,7 @@ import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import About from "./About";
 import HomeGigs from "./HomeGigs";
+import HomeGigs2 from "./HomeGigs2";
 import Skills from "./Distinctions";
 import RecentDiscography from "./RecentDiscography";
 import Discography from "./Discography";
@@ -9,6 +10,7 @@ import { gigs } from "../Constants/gigs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import { userinfo, ctaTexts, headings } from "../Constants/userinfo";
+import Discography2 from "./Discography2";
 
 const HomePage = ({ currentTheme }) => {
   return (
@@ -43,16 +45,13 @@ const HomePage = ({ currentTheme }) => {
         </h1>
         {gigs.slice(0, 3).map((gigs, key) => {
           return (
-            <div key={key} data-aos="fade-up">
-              <HomeGigs
-                currentTheme={currentTheme}
-                gig={gigs}
-                id={key}
-              />
-            </div>
+            <>
+              <div key={key} data-aos="fade-up">
+                <HomeGigs2 currentTheme={currentTheme} gig={gigs} id={key} />
+              </div>
+            </>
           );
         })}
-        
       </div>
       <div
         id="skills"
@@ -61,15 +60,13 @@ const HomePage = ({ currentTheme }) => {
       >
         <Skills currentTheme={currentTheme} />
       </div>
-      <RecentDiscography currentTheme={currentTheme} />
-      
-        <Discography currentTheme={currentTheme} />
-        
+      {/* <RecentDiscography currentTheme={currentTheme} /> */}
 
-      <About 
-      currentTheme = {currentTheme}/>
+      {/* <Discography currentTheme={currentTheme} /> */}
+
+      <Discography2 currentTheme={currentTheme}/>
+      <About currentTheme={currentTheme} />
     </div>
-    
   );
 };
 
