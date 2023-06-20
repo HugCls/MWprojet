@@ -43,15 +43,10 @@ const HomePage = ({ currentTheme }) => {
         <h1 className={styles.workheading} data-aos="fade-up">
           {headings.gigsHomePage}
         </h1>
-        {gigs.slice(0, 3).map((gigs, key) => {
-          return (
-            <>
-              <div key={key} data-aos="fade-up">
-                <HomeGigs2 currentTheme={currentTheme} gig={gigs} id={key} />
-              </div>
-            </>
-          );
-        })}
+
+        <div data-aos="fade-up">
+          <HomeGigs2 currentTheme={currentTheme} />
+        </div>
       </div>
       <div
         id="skills"
@@ -64,7 +59,7 @@ const HomePage = ({ currentTheme }) => {
 
       {/* <Discography currentTheme={currentTheme} /> */}
 
-      <Discography2 currentTheme={currentTheme}/>
+      <Discography2 currentTheme={currentTheme} />
       <About currentTheme={currentTheme} />
     </div>
   );
