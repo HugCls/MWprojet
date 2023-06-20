@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Media from '../Components/Media';
+import Media from '../Components/MediaPage/Media';
 import HeadTag from '../Components/HeadTag';
 
 const media = ({ currentTheme }) => {

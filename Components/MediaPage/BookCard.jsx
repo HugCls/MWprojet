@@ -1,7 +1,7 @@
-import { Box, TagLabel, Tag, HStack } from "@chakra-ui/react";
-import styles from "../styles/Gigs.module.css";
-import { headings } from "../Constants/userinfo";
+import styles from "./Media.module.css";
 
+import { Box, TagLabel, Tag, HStack } from "@chakra-ui/react";
+import { headings } from "../../Constants/userinfo";
 import Image from "next/image";
 import React from "react";
 import { useDisclosure } from "@chakra-ui/react";

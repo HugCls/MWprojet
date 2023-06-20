@@ -1,8 +1,8 @@
-import styles from "../styles/Gigs.module.css";
+import styles from "./Media.module.css";
 import React, { useState, useEffect } from "react";
 import { useMediaQuery } from "@chakra-ui/react";
 import { useSwipeable } from "react-swipeable";
-import { headings } from "../Constants/userinfo";
+import { headings } from "../../Constants/userinfo";
 
 export const CarouselItem = ({ children, width, currentTheme }) => {
   return (
