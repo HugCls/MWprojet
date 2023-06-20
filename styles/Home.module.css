@@ -91,6 +91,12 @@
   margin-bottom: 1rem;
 }
 
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
 .workheading {
   font-family: "Playfair Display", serif;
   font-size: 50px;
