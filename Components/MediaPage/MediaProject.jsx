@@ -9,7 +9,7 @@ import {
   faAmazon
 } from "@fortawesome/free-brands-svg-icons";
 
-const MediaProject = ({ currentTheme, data, error, loading, id }) => {
+const MediaProject = ({ currentTheme, data, error, loading }) => {
   if (loading) {
     return (
       <Box display="flex" justifyContent="center" alignItems="center">
