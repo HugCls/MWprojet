@@ -4,7 +4,6 @@ import MediaProject from "./MediaProject";
 import useFetchData from "../../Hooks/useFetchData";
 import ArticleCard from "./ArticleCard";
 import BookCard from "./BookCard";
-import { project } from "../../Constants/project";
 import { custom_book } from "../../Constants/book";
 import { custom_articles } from "../../Constants/articles";
 import { useState, useEffect } from "react";
@@ -38,7 +37,6 @@ const Media = ({ currentTheme }) => {
             data={data}
             error={error}
             loading={loading}
-            id={0}
           />
         </div>
         ;

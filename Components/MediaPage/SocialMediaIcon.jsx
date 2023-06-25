@@ -2,10 +2,7 @@ import styles from "./Media.module.css";
 
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faSpotify,
-  faAmazon
-} from "@fortawesome/free-brands-svg-icons";
+
 
 const SocialMediaIcon = ({ link, icon, currentTheme }) => {
     return (

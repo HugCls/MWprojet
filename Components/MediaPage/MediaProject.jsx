@@ -1,10 +1,7 @@
 import styles from "./Media.module.css";
 import he from "he";
 import striptags from "striptags";
-import { Divider, Box, Spinner, Alert, Button } from "@chakra-ui/react";
-import { useState } from "react";
-import Image from "next/image";
-import { useSwipeable } from "react-swipeable";
+import { Box, Spinner, Alert} from "@chakra-ui/react";
 import VideoPlayer from "./VideoPlayer";
 import SocialMediaIcon from "./SocialMediaIcon";
 import {
@@ -32,7 +29,7 @@ const MediaProject = ({ currentTheme, data, error, loading, id }) => {
   console.log(data);
   
   return (
-    data?.map((value, key) => {
+    data?.map((value, id) => {
       const { name, videourl, spotifylink, amazonlink, videodescription } = value.acf;
       const decodedName = he.decode(striptags(name));
       const videosUrl = he.decode(striptags(videourl));
@@ -42,7 +39,7 @@ const MediaProject = ({ currentTheme, data, error, loading, id }) => {
       return (
     <div
       className={styles.parentofparentcard}
-      style={{display: "flex", justifyContent: id % 2 === 0 ? "flex-start" : "flex-end" }}
+      style={{ justifyContent: id % 2 === 0 ? "flex-start" : "flex-end" }}
     >
       <div className={styles.parentcard}>
         <div className={styles.cardtitle}>
