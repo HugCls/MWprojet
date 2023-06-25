@@ -1,10 +1,7 @@
 import styles from "./Media.module.css";
 import he from "he";
 import striptags from "striptags";
-import { Divider, Box, Spinner, Alert, Button } from "@chakra-ui/react";
-import { useState } from "react";
-import Image from "next/image";
-import { useSwipeable } from "react-swipeable";
+import { Box, Spinner, Alert} from "@chakra-ui/react";
 import VideoPlayer from "./VideoPlayer";
 import SocialMediaIcon from "./SocialMediaIcon";
 import {
