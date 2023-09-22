@@ -23,9 +23,9 @@ const ArticleCard = ({ article, currentTheme }) => {
   return (
     <div style={{ whiteSpace: "initial" }}>
       <Box
-         width="25rem" // ou toute autre valeur appropriée
-         height="40rem" // ou toute autre valeur appropriée
-        position="relative" // Ajout de la position relative
+        width="25rem"
+        height="40rem"
+        position="relative"
         borderWidth="2px"
         borderRadius="lg"
         overflow="hidden"
@@ -34,8 +34,8 @@ const ArticleCard = ({ article, currentTheme }) => {
         <Image
           src={article.thumbnail || article.cover_image}
           alt="thumbnail image"
-          width={500} // ou toute autre valeur appropriée
-          height={400} // ou toute autre valeur appropriée
+          width={500}
+          height={400}
         />
         <Box p="6">
           <HStack spacing={2}>
