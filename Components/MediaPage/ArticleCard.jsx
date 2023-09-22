@@ -15,7 +15,6 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 
-
 const ArticleCard = ({ article, currentTheme }) => {
   const btnRef = React.useRef(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -24,8 +23,9 @@ const ArticleCard = ({ article, currentTheme }) => {
   return (
     <div style={{ whiteSpace: "initial" }}>
       <Box
-        height={"680px"}
-        maxW="md"
+         width="25rem" // ou toute autre valeur appropriée
+         height="40rem" // ou toute autre valeur appropriée
+        position="relative" // Ajout de la position relative
         borderWidth="2px"
         borderRadius="lg"
         overflow="hidden"
@@ -34,8 +34,8 @@ const ArticleCard = ({ article, currentTheme }) => {
         <Image
           src={article.thumbnail || article.cover_image}
           alt="thumbnail image"
-          height="500"
-          width="500"
+          width={500} // ou toute autre valeur appropriée
+          height={400} // ou toute autre valeur appropriée
         />
         <Box p="6">
           <HStack spacing={2}>
@@ -105,7 +105,12 @@ const ArticleCard = ({ article, currentTheme }) => {
                 </Button>
               </ModalBody>
               <ModalFooter>
-                <Button onClick={onClose} backgroundColor={currentTheme.secondary}>Close</Button>
+                <Button
+                  onClick={onClose}
+                  backgroundColor={currentTheme.secondary}
+                >
+                  Close
+                </Button>
               </ModalFooter>
             </ModalContent>
           </Modal>

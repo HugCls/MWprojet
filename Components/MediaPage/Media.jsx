@@ -39,7 +39,7 @@ const Media = ({ currentTheme }) => {
             loading={loading}
           />
         </div>
-        ;
+        
       </div>
 
       {userinfo.articles.visible ? (

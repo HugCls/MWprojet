@@ -60,25 +60,26 @@ const BookCarousel = ({ children, currentTheme }) => {
   });
 
   return (
-    <><div className={styles.articleHeading}>{headings.book}</div><div
-          {...handlers}
-          className={styles.bookCarousel}
-          id="book"
-          style={{ backgroundColor: currentTheme.secondary }}
-          data-aos="fade-up"
+    <>
+      <div className={styles.articleHeading}>{headings.book}</div>
+      <div
+        {...handlers}
+        className={styles.bookCarousel}
+        id="book"
+        style={{ backgroundColor: currentTheme.secondary }}
+        data-aos="fade-up"
       >
-          {/* <div
-      className={styles.inner} */}
+        {/* <div
+      className={styles.inner} > */}
 
-
-          {React.Children.map(children, (child, index) => {
-              return React.cloneElement(child, {
-                  width: isSmall ? (isVerySmall ? "100%" : "50%") : "33.33%",
-              });
-          })}
-          {/* </div> */}
-
-      </div></>
+        {React.Children.map(children, (child, index) => {
+          return React.cloneElement(child, {
+            width: isSmall ? (isVerySmall ? "100%" : "50%") : "33.33%",
+          });
+        })}
+        {/* </div>  */}
+      </div>
+    </>
   );
 };
 
