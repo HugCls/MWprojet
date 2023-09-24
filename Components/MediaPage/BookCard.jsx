@@ -18,18 +18,17 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 
-
 const BookCard = ({ book, currentTheme }) => {
   const btnRef = React.useRef(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [scrollBehavior, setScrollBehavior] = React.useState("inside");
 
-
   return (
     <div style={{ whiteSpace: "initial" }}>
       <Box
-        height={"680px"}
-        maxW="md"
+        width="25rem"
+        height="40rem"
+        position="relative"
         borderWidth="2px"
         borderRadius="lg"
         overflow="hidden"
@@ -38,27 +37,13 @@ const BookCard = ({ book, currentTheme }) => {
         <Image
           src={book.thumbnail || book.cover_image}
           alt="thumbnail image"
-          height="500"
-          width="500" />
+          width={500}
+          height={400}
+        />
         <Box p="6">
           <HStack spacing={2}>
             {book.categories
               ? book.categories.map((category, key) => {
-                return (
-                  <div key={key}>
-                    <Tag
-                      size="sm"
-                      borderRadius="md"
-                      variant="outline"
-                      colorScheme="blue"
-                    >
-                      <TagLabel>{category}</TagLabel>
-                    </Tag>
-                  </div>
-                );
-              })
-              : book.tag_list
-                ? book.tag_list.map((category, key) => {
                   return (
                     <div key={key}>
                       <Tag
@@ -72,7 +57,22 @@ const BookCard = ({ book, currentTheme }) => {
                     </div>
                   );
                 })
-                : null}
+              : book.tag_list
+              ? book.tag_list.map((category, key) => {
+                  return (
+                    <div key={key}>
+                      <Tag
+                        size="sm"
+                        borderRadius="md"
+                        variant="outline"
+                        colorScheme="blue"
+                      >
+                        <TagLabel>{category}</TagLabel>
+                      </Tag>
+                    </div>
+                  );
+                })
+              : null}
           </HStack>
           <Box mt="1" as="h4" lineHeight="tight">
             {book.title}
@@ -109,7 +109,12 @@ const BookCard = ({ book, currentTheme }) => {
                 </Button>
               </ModalBody>
               <ModalFooter>
-                <Button onClick={onClose} backgroundColor={currentTheme.secondary}>Close</Button>
+                <Button
+                  onClick={onClose}
+                  backgroundColor={currentTheme.secondary}
+                >
+                  Close
+                </Button>
               </ModalFooter>
             </ModalContent>
           </Modal>

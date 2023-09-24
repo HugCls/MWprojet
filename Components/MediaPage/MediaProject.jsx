@@ -21,7 +21,7 @@ const MediaProject = ({ currentTheme, data, error, loading }) => {
   if (error) {
     return (
       <Alert status="error">
-        <p>Error loading the gigs: {error.message}</p>
+        <p>Error loading the videos: {error.message}</p>
       </Alert>
     );
   }
