@@ -1,9 +1,8 @@
-import { Box, TagLabel, Tag, HStack } from "@chakra-ui/react";
-import Image from "next/image";
-import React from "react";
-import { useDisclosure } from "@chakra-ui/react";
-import Parser from "html-react-parser";
 import {
+  Box,
+  TagLabel,
+  Tag,
+  HStack,
   Button,
   Modal,
   ModalOverlay,
@@ -12,111 +11,101 @@ import {
   ModalCloseButton,
   ModalBody,
   ModalFooter,
+  useDisclosure,
 } from "@chakra-ui/react";
-import Link from "next/link";
+import Image from "next/image";
+import React from "react";
+import Parser from "html-react-parser";
 
-const ArticleCard = ({ article, currentTheme }) => {
+const ArticleCard = ({
+  article: {
+    thumbnail,
+    cover_image,
+    categories,
+    tag_list,
+    title,
+    description,
+    link,
+    phraseLink,
+  },
+  currentTheme,
+}) => {
   const btnRef = React.useRef(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [scrollBehavior, setScrollBehavior] = React.useState("inside");
+
+  const renderTags = (tags) => {
+    return tags.slice(0, 3).map((category, key) => (
+      <div key={key}>
+        <Tag size="sm" borderRadius="md" variant="outline" colorScheme="blue">
+          <TagLabel>{category}</TagLabel>
+        </Tag>
+      </div>
+    ));
+  };
 
   return (
-    <div style={{ whiteSpace: "initial" }}>
-      <Box
-        width="25rem"
-        height="40rem"
-        position="relative"
-        borderWidth="2px"
-        borderRadius="lg"
-        overflow="hidden"
-        bg={currentTheme.secondary}
-      >
-        <Image
-          src={article.thumbnail || article.cover_image}
-          alt="thumbnail image"
-          width={500}
-          height={400}
-        />
-        <Box p="6">
-          <HStack spacing={2}>
-            {article.categories
-              ? article.categories.slice(0, 3).map((category, key) => {
-                  return (
-                    <div key={key}>
-                      <Tag
-                        size="sm"
-                        borderRadius="md"
-                        variant="outline"
-                        colorScheme="blue"
-                      >
-                        <TagLabel>{category}</TagLabel>
-                      </Tag>
-                    </div>
-                  );
-                })
-              : article.tag_list
-              ? article.tag_list.slice(0, 3).map((category, key) => {
-                  return (
-                    <div key={key}>
-                      <Tag
-                        size="sm"
-                        borderRadius="md"
-                        variant="outline"
-                        colorScheme="blue"
-                      >
-                        <TagLabel>{category}</TagLabel>
-                      </Tag>
-                    </div>
-                  );
-                })
-              : null}
-          </HStack>
-          <Box mt="1" as="h4" lineHeight="tight">
-            {article.title}
-          </Box>
-          <Box as="span" color={currentTheme.subtext} fontSize="sm">
-            {article.description.replace(/(<([^>]+)>)/gi, "").slice(0, 80) +
-              " . . ."}
-            &nbsp;&nbsp;
-          </Box>
-          <Button variant="link" ref={btnRef} onClick={onOpen}>
-            <a style={{ fontSize: "16px", color: "#3182ce" }}>View More</a>
-          </Button>
-          <Modal
-            onClose={onClose}
-            finalFocusRef={btnRef}
-            isOpen={isOpen}
-            scrollBehavior={scrollBehavior}
-          >
-            <ModalOverlay />
-            <ModalContent style={{ backgroundColor: currentTheme.secondary }}>
-              <ModalHeader>{article.title}</ModalHeader>
-              <ModalCloseButton />
-              <ModalBody>
-                {Parser(article.description)}{" "}
-                <Button variant="link">
-                  <a
-                    href={article.link}
-                    target="_blank"
-                    style={{ fontSize: "16px", color: "#3182ce" }}
-                  >
-                    {article.phraseLink}
-                  </a>
-                </Button>
-              </ModalBody>
-              <ModalFooter>
-                <Button
-                  onClick={onClose}
-                  backgroundColor={currentTheme.secondary}
-                >
-                  Close
-                </Button>
-              </ModalFooter>
-            </ModalContent>
-          </Modal>
+    <Box
+      as={"div"}
+      style={{ whiteSpace: "initial" }}
+    //  maxW="xs"
+    width="20rem"
+      height={{ base: "auto", md: "47rem" }}
+      position="relative"
+      borderWidth="2px"
+      borderRadius="lg"
+      overflow="hidden"
+      bg={currentTheme.secondary}
+    >
+      <Image
+        src={thumbnail || cover_image}
+        alt="thumbnail image"
+      />
+      <Box p="6">
+        <HStack spacing={2}>
+          {categories
+            ? renderTags(categories)
+            : tag_list
+            ? renderTags(tag_list)
+            : null}
+        </HStack>
+        <Box mt="1" as="h4" lineHeight="tight">
+          {title}
         </Box>
+        <Box as="span" color={currentTheme.subtext} fontSize="sm">
+          {description.replace(/(<([^>]+)>)/gi, "").slice(0, 80) + " . . ."}
+        </Box>
+        <Button variant="link" ref={btnRef} onClick={onOpen}>
+          <a style={{ fontSize: "16px", color: "#3182ce" }}>View More</a>
+        </Button>
+        <Modal onClose={onClose} finalFocusRef={btnRef} isOpen={isOpen}>
+          <ModalOverlay />
+          <ModalContent style={{ backgroundColor: currentTheme.secondary }}>
+            <ModalHeader>{title}</ModalHeader>
+            <ModalCloseButton />
+            <ModalBody>
+              {Parser(description)}
+              <Button variant="link">
+                <a
+                  href={link}
+                  target="_blank"
+                  style={{ fontSize: "16px", color: "#3182ce" }}
+                >
+                  {phraseLink}
+                </a>
+              </Button>
+            </ModalBody>
+            <ModalFooter>
+              <Button
+                onClick={onClose}
+                backgroundColor={currentTheme.secondary}
+              >
+                Close
+              </Button>
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
       </Box>
-    </div>
+    </Box>
   );
 };
 
