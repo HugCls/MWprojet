@@ -24,21 +24,22 @@ const BookCard = ({ book, currentTheme }) => {
   const [scrollBehavior, setScrollBehavior] = React.useState("inside");
 
   return (
-    <div style={{ whiteSpace: "initial" }}>
-      <Box
-        width="25rem"
-        height="40rem"
-        position="relative"
-        borderWidth="2px"
-        borderRadius="lg"
-        overflow="hidden"
-        bg={currentTheme.secondary}
-      >
+    <Box
+    as={"div"}
+    style={{ whiteSpace: "initial" }}
+  //  maxW="xs"
+  width="20rem"
+    height={{ base: "auto", md: "47rem" }}
+    position="relative"
+    borderWidth="2px"
+    borderRadius="lg"
+    overflow="hidden"
+    bg={currentTheme.secondary}
+  >
         <Image
           src={book.thumbnail || book.cover_image}
           alt="thumbnail image"
-          width={500}
-          height={400}
+         
         />
         <Box p="6">
           <HStack spacing={2}>
@@ -120,7 +121,6 @@ const BookCard = ({ book, currentTheme }) => {
           </Modal>
         </Box>
       </Box>
-    </div>
   );
 };
 
