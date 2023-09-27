@@ -8,7 +8,7 @@ export const custom_articles = [
     title: "Blues Blast Magazine",
     issue: "August 11, 2022",
     description:
-      "“Most sidemen don’t get a lot of attention. Some guys they go to gigs and they see there’s a whole band up there and they actually see that there’s something goin’ on that’s a product of the whole.” Michael “Mudcat” Ward creates... view full article : " ,
+      "“Most sidemen don’t get a lot of attention. Some guys they go to gigs and they see there’s a whole band up there and they actually see that there’s something goin’ on that’s a product of the whole.” Michael “Mudcat” Ward creates... view full article : ",
     link: "https://www.bluesblastmagazine.com/michael-mudcat-ward-sidemans-song/",
     phraseLink: "Read the full article",
     thumbnail: bluesblast,
@@ -36,8 +36,7 @@ export const custom_articles = [
     title:
       "Blues All Day Long: The Jimmy Rogers Story, by Wayne Everett Goins.  (University of Illinois Press: 2014)",
     issue: "2014",
-    description:
-      `"Listings in the Index: 208-12, 237, 238, 245, 246, 273, 274, 278, 315.<br><br>
+    description: `"Listings in the Index: 208-12, 237, 238, 245, 246, 273, 274, 278, 315.<br><br>
       Page 237 gives an account of Jimmy’s wife Dorothy preparing barbecue chicken for Ward’s family in Maine.<br><br>
       Page 273 gives detail of the Breminale Festival performance in Bremen, Germany which resulted in the live recording of Jimmy Rogers with Ronnie Earl and the Broadcasters (Rounder).
       "`,
@@ -50,8 +49,7 @@ export const custom_articles = [
     title:
       "Incurable Blues: The Troubles and Triumph of Blues Legend Hubert Sumlin, by Will Romano.  (Backbeat Books; San Francisco, CA, 2005)",
     issue: "2005",
-    description:
-      `"Michael “Mudcat” Ward is listed in the Index for pages 145 and 189, and I am mentioned additionally on page 192.<br><br>
+    description: `"Michael “Mudcat” Ward is listed in the Index for pages 145 and 189, and I am mentioned additionally on page 192.<br><br>
 
       Here’s a passage from Chapter 6 relating to the making of Hubert Sumlin’s Blues Party (Blacktop #1036LP, 1987):<br><br>
       
