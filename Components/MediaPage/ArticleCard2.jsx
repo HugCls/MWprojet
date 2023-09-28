@@ -13,11 +13,20 @@ import {
   ModalBody,
   ModalFooter,
   useDisclosure,
+  Tooltip,
 } from "@chakra-ui/react";
 import Image from "next/image";
 import Parser from "html-react-parser";
 
-const ArticleCard2 = ({ articles, currentTheme }) => {
+const ArticleCard2 = ({
+  cover_image,
+  tags,
+  title,
+  description,
+  link,
+  phraseLink,
+  currentTheme
+}) => {
   const btnRef = React.useRef(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -29,12 +38,16 @@ const ArticleCard2 = ({ articles, currentTheme }) => {
     ));
   };
 
+  const truncateTitle = (title, length = 30) => {
+    return title.length > length ? `${title.slice(0, length)}...` : title;
+  };
+
   return (
     <Box
       as="div"
-      style={{ whiteSpace: "initial" }}
-      width="20rem"
-      height={{ base: "auto", md: "47rem" }}
+      whiteSpace="initial"
+      w="20rem"
+      h={{ base: "auto", md: "40rem" }}
       position="relative"
       borderWidth="2px"
       borderRadius="lg"
@@ -42,20 +55,22 @@ const ArticleCard2 = ({ articles, currentTheme }) => {
       bg={currentTheme.secondary}
     >
       <Image
-        src={articles?.cover_image.url}
+        src={cover_image?.url}
         alt="thumbnail image"
-        width={articles?.cover_image.width}
-        height={articles?.cover_image.height}
+        width={cover_image?.width}
+        height={cover_image?.height}
       />
       <Box p="6">
         <HStack spacing={2}>
-          {articles?.tags && renderTags(JSON.parse(articles.tags))}
+          {tags && renderTags(JSON.parse(tags))}
         </HStack>
         <Box mt="1" as="h4" lineHeight="tight">
-          {articles?.title}
+          <Tooltip label={title} aria-label="A tooltip">
+            <span>{truncateTitle(title)}</span>
+          </Tooltip>
         </Box>
         <Box as="span" color={currentTheme.subtext} fontSize="sm">
-          {`${articles?.description.replace(/(<([^>]+)>)/gi, "").slice(0, 80)} . . .`}
+          {`${description.replace(/(<([^>]+)>)/gi, "").slice(0, 80)} . . .`}
         </Box>
         <Button variant="link" ref={btnRef} onClick={onOpen}>
           View More
@@ -63,13 +78,13 @@ const ArticleCard2 = ({ articles, currentTheme }) => {
         <Modal onClose={onClose} finalFocusRef={btnRef} isOpen={isOpen}>
           <ModalOverlay />
           <ModalContent bg={currentTheme.secondary}>
-            <ModalHeader>{articles?.title}</ModalHeader>
+            <ModalHeader>{title}</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
-              {articles && Parser(articles.description)}
+              {description && Parser(description)}
               <Button variant="link">
-                <a href={articles?.link} target="_blank" style={{ fontSize: "16px", color: "#3182ce" }}>
-                  {articles?.phraseLink}
+                <a href={link} target="_blank" style={{ fontSize: "16px", color: "#3182ce" }}>
+                  {phraseLink}
                 </a>
               </Button>
             </ModalBody>

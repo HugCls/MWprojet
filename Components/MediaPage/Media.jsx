@@ -35,7 +35,15 @@ const Media = ({ currentTheme }) => {
       <Carousel currentTheme={currentTheme}>
         {articles.slice(0, 6).map((article) => (
           <CarouselItem key={article.id} currentTheme={currentTheme}>
-            <ArticleCard2 articles={article.acf} currentTheme={currentTheme} />
+            <ArticleCard2
+              cover_image={article.acf.cover_image}
+              tags={article.acf.tags}
+              title={article.acf.title}
+              description={article.acf.description}
+              link={article.acf.link}
+              phraseLink={article.acf.phraseLink}
+              currentTheme={currentTheme}
+            />
           </CarouselItem>
         ))}
       </Carousel>
