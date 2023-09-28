@@ -1,8 +1,6 @@
-import React from "react";
+import React, { useRef } from "react";
 import {
   Box,
-  TagLabel,
-  Tag,
   HStack,
   Button,
   Modal,
@@ -13,28 +11,35 @@ import {
   ModalBody,
   ModalFooter,
   useDisclosure,
+  Tooltip,
 } from "@chakra-ui/react";
+import { renderTags, truncateTitle } from './utils';
 import Image from "next/image";
 import Parser from "html-react-parser";
 
-const ArticleCard2 = ({ articles, currentTheme }) => {
-  const btnRef = React.useRef(null);
+const ArticleCard2 = ({
+  cover_image = {},
+  tags = [],
+  title = "",
+  description = "",
+  link = "#",
+  phraseLink = "Read More",
+  currentTheme = {}
+}) => {
+  const btnRef = useRef(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const renderTags = (tags) => {
-    return tags.slice(0, 3).map((category, key) => (
-      <Tag key={key} size="sm" borderRadius="md" variant="outline" colorScheme="blue">
-        <TagLabel>{category}</TagLabel>
-      </Tag>
-    ));
+  const linkStyle = {
+    fontSize: "16px",
+    color: "#3182ce"
   };
 
   return (
     <Box
       as="div"
-      style={{ whiteSpace: "initial" }}
-      width="20rem"
-      height={{ base: "auto", md: "47rem" }}
+      whiteSpace="initial"
+      w="20rem"
+      h={{ base: "auto", md: "40rem" }}
       position="relative"
       borderWidth="2px"
       borderRadius="lg"
@@ -42,34 +47,38 @@ const ArticleCard2 = ({ articles, currentTheme }) => {
       bg={currentTheme.secondary}
     >
       <Image
-        src={articles?.cover_image.url}
+        src={cover_image.url || ""}
         alt="thumbnail image"
-        width={articles?.cover_image.width}
-        height={articles?.cover_image.height}
+        width={cover_image.width || 0}
+        height={cover_image.height || 0}
       />
       <Box p="6">
         <HStack spacing={2}>
-          {articles?.tags && renderTags(JSON.parse(articles.tags))}
+          {tags.length > 0 && renderTags(JSON.parse(tags))}
         </HStack>
         <Box mt="1" as="h4" lineHeight="tight">
-          {articles?.title}
+          <Tooltip label={title} aria-label="A tooltip">
+            <span>{truncateTitle(title)}</span>
+          </Tooltip>
         </Box>
         <Box as="span" color={currentTheme.subtext} fontSize="sm">
-          {`${articles?.description.replace(/(<([^>]+)>)/gi, "").slice(0, 80)} . . .`}
+          {`${description.replace(/(<([^>]+)>)/gi, "").slice(0, 80)} . . .`}
         </Box>
-        <Button variant="link" ref={btnRef} onClick={onOpen}>
+        <Button variant="link" ref={btnRef} onClick={onOpen} style={linkStyle}>
           View More
         </Button>
-        <Modal onClose={onClose} finalFocusRef={btnRef} isOpen={isOpen}>
+        <Modal onClose={onClose} finalFocusRef={btnRef} isOpen={isOpen} >
           <ModalOverlay />
-          <ModalContent bg={currentTheme.secondary}>
-            <ModalHeader>{articles?.title}</ModalHeader>
+          <ModalContent bg={currentTheme.secondary} >
+            <ModalHeader mt="50px" >{title}</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
-              {articles && Parser(articles.description)}
-              <Button variant="link">
-                <a href={articles?.link} target="_blank" style={{ fontSize: "16px", color: "#3182ce" }}>
-                  {articles?.phraseLink}
+              {description && Parser(description)}
+              <Button variant="link" style={linkStyle}>
+                <a href={link} target="_blank" 
+                
+                >
+                  {phraseLink}
                 </a>
               </Button>
             </ModalBody>

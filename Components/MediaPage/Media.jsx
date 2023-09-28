@@ -7,6 +7,8 @@ import { custom_book } from "../../Constants/book";
 import { headings, userinfo } from "../../Constants/userinfo";
 import Carousel, { CarouselItem } from "./Carousel";
 import { useState, useEffect } from "react";
+import BookCarousel, { BookCarouselItem } from "./BookCarousel";
+// import { BookCarouselItem } from "./BookCarousel";
 
 const Media = ({ currentTheme }) => {
   const [videos, setVideos] = useState(null);
@@ -35,18 +37,29 @@ const Media = ({ currentTheme }) => {
       <Carousel currentTheme={currentTheme}>
         {articles.slice(0, 6).map((article) => (
           <CarouselItem key={article.id} currentTheme={currentTheme}>
-            <ArticleCard2 articles={article.acf} currentTheme={currentTheme} />
+            <ArticleCard2
+              cover_image={article.acf.cover_image}
+              tags={article.acf.tags}
+              title={article.acf.title}
+              description={article.acf.description}
+              link={article.acf.link}
+              phraseLink={article.acf.phraseLink}
+              currentTheme={currentTheme}
+            />
           </CarouselItem>
         ))}
       </Carousel>
-
+<BookCarousel currentTheme={currentTheme} >
       {userinfo.book.visible && (
         <div style={{ backgroundColor: currentTheme.secondary }}>
           {bookList.map((book) => (
+            <BookCarouselItem key={book.id} currentTheme={currentTheme}>
             <BookCard key={book.id} book={book} currentTheme={currentTheme} />
+            </BookCarouselItem>
           ))}
         </div>
       )}
+      </BookCarousel>
     </div>
   );
 };

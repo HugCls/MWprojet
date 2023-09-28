@@ -15,7 +15,9 @@ import {
   ModalCloseButton,
   ModalBody,
   ModalFooter,
+  Tooltip
 } from "@chakra-ui/react";
+import { truncateTitle } from './utils';
 import Link from "next/link";
 
 const BookCard = ({ book, currentTheme }) => {
@@ -29,7 +31,7 @@ const BookCard = ({ book, currentTheme }) => {
     style={{ whiteSpace: "initial" }}
   //  maxW="xs"
   width="20rem"
-    height={{ base: "auto", md: "47rem" }}
+    height={{ base: "auto", md: "40rem" }}
     position="relative"
     borderWidth="2px"
     borderRadius="lg"
@@ -39,6 +41,8 @@ const BookCard = ({ book, currentTheme }) => {
         <Image
           src={book.thumbnail || book.cover_image}
           alt="thumbnail image"
+          w="333"
+          h="500"
          
         />
         <Box p="6">
@@ -76,10 +80,12 @@ const BookCard = ({ book, currentTheme }) => {
               : null}
           </HStack>
           <Box mt="1" as="h4" lineHeight="tight">
-            {book.title}
-          </Box>
+          <Tooltip  aria-label="A tooltip">
+            <span>{truncateTitle(book.title)}</span>
+          </Tooltip>
+        </Box>
           <Box as="span" color={currentTheme.subtext} fontSize="sm">
-            {book.description.replace(/(<([^>]+)>)/gi, "").slice(0, 150) +
+            {book.description.replace(/(<([^>]+)>)/gi, "").slice(0, 80) +
               " . . ."}
             &nbsp;&nbsp;
           </Box>
@@ -103,7 +109,7 @@ const BookCard = ({ book, currentTheme }) => {
                   <a
                     href={book.link}
                     target="_blank"
-                    style={{ fontSize: "16px", color: "#3182ce" }}
+                    // style={{ fontSize: "16px", color: "#3182ce" }}
                   >
                     {book.phraseLink}
                   </a>
